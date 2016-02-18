@@ -1,0 +1,29 @@
+{"episodes":
+ [
+    {
+        "id": 501,
+        "name": "Episode 1 - WOAHH",
+        "length": 444,
+        "description": "This episode is just some blues to ring in this week's probable snowfall.",
+        "image": {
+            "thumbnail": "/maybe-photos/1429052408029.jpg"
+        },
+        "src":"shows/show5/501.mp3"
+    },
+    {
+        "id": 502,
+        "name": "Episode 2 - AYA AYAYAY",
+        "length": 555,
+        "description": "More of a genre I know about, listening to some punk.",
+        "image": {
+            "thumbnail": "/maybe-photos/1429052408029.jpg"
+        },
+        "src":"shows/show5/502.mp3"
+    }
+ ],
+  "queue":
+ [
+     "shows/show5/501.mp3",
+     "shows/show5/502.mp3"
+ ]
+}

@@ -1,0 +1,29 @@
+{"episodes":
+    [
+        {
+            "id": 101,
+            "name": "Episode 1 - BEETS",
+            "length": 333,
+            "description": "This episode is just some blues to ring in this week's probable snowfall.",
+            "image": {
+                "thumbnail": "/maybe-photos/1429052408029.jpg"
+            },
+            "src":"radio-two/shows/show1/101.mp3"
+        },
+        {
+            "id": 102,
+            "name": "Episode 1 - CHELSEA",
+            "length": 435,
+            "description": "More of a genre I know about, listening to some punk.",
+            "image": {
+                "thumbnail": "/maybe-photos/1429052408029.jpg"
+            },
+           "src":"radio-two/shows/show1/102.mp3"
+        }
+    ],
+ "queue":
+ [
+     "shows/show1/101.mp3",
+     "shows/show1/102.mp3"
+ ]
+}

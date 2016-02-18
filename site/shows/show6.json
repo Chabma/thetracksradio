@@ -1,0 +1,29 @@
+{"episodes":
+ [
+    {
+        "id": 601,
+        "name": "Episode 1 - COMIC 1",
+        "length": 565,
+        "description": "This episode is just some blues to ring in this week's probable snowfall.",
+        "image": {
+            "thumbnail": "/maybe-photos/1429052408029.jpg"
+        },
+        "src":"shows/show6/601.mp3"
+    },
+    {
+        "id": 602,
+        "name": "Episode 2 - COMIC 2: \"TO THE BEACH!!\"",
+        "length": 555,
+        "description": "More of a genre I know about, listening to some punk.",
+        "image": {
+            "thumbnail": "/maybe-photos/1429052408029.jpg"
+        },
+        "src":"shows/show6/602.mp3"
+    }
+ ],
+  "queue":
+ [
+     "shows/show6/601.mp3",
+     "shows/show6/602.mp3"
+ ]
+}

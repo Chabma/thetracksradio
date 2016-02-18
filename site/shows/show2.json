@@ -1,0 +1,29 @@
+{"episodes":
+ [
+    {
+        "id": 201,
+        "name": "Episode 1 - CHELSEA",
+        "length": 333,
+        "description": "This episode is just some blues to ring in this week's probable snowfall.",
+        "image": {
+            "thumbnail": "/maybe-photos/1429052408029.jpg"
+        },
+        "src":"shows/show2/201.mp3"
+    },
+    {
+        "id": 202,
+        "name": "Episode 2 - ARSENAL",
+        "length": 435,
+        "description": "More of a genre I know about, listening to some punk.",
+        "image": {
+            "thumbnail": "/maybe-photos/1429052408029.jpg"
+        },
+        "src":"shows/show2/202.mp3"
+    }
+ ],
+  "queue":
+ [
+     "shows/show2/201.mp3",
+     "shows/show2/202.mp3"
+ ]
+}
