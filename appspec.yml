@@ -28,4 +28,4 @@ files:
   - source: /appspec.yml
     destination: /var/www/html
   - source: /index.html
-    destination: /var/www/html
+    destination: /var/www/html/index.html
