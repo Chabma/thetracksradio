@@ -129,7 +129,7 @@ $(document).ready(function()
     if (randomnumber == 17){
         $( "#logo h1" ).css("color","bisque");
     }
-    document.body.style.backgroundImage = "url('radio-two/good-photos/"+randomnumber+".JPG')";
+    document.body.style.backgroundImage = "url('images/good-photos/"+randomnumber+".JPG')";
 });
 
 function play_episode(episode) {
