@@ -38,10 +38,10 @@ $(document).ready(function()
         var music = document.getElementById('player');
         if (music.paused) {
 		music.play();
-		$("#play_pause").attr('src', 'pause.png');
+		$("#play_pause").attr('src', 'images/pause.png');
 	} else { 
 		music.pause();
-		$("#play_pause").attr('src', 'play.png');
+		$("#play_pause").attr('src', 'images/play.png');
 	}
     });
 
@@ -77,7 +77,7 @@ $(document).ready(function()
     });
      
      var audio = document.getElementById("player");
-     audio.onloadedmetadata = function(){ audio.currentTime = 20; }
+     audio.onloadedmetadata = function(){ audio.currentTime = 0; }
      var audio_prog = document.getElementById("audio_progress");
      audio_prog.onchange = function() {seek(audio_prog.value)};
     
@@ -100,6 +100,7 @@ $(document).ready(function()
         document.getElementById("current_seconds").innerHTML = Math.floor(audio.currentTime % 60);
         document.getElementById("max_minutes").innerHTML = Math.floor(audio.duration / 60);
         document.getElementById("max_seconds").innerHTML = Math.floor(audio.duration % 60);
+        console.log(audio.currentTime);
      }
      function update_duration(x) {
         // Display the current position of the video in a p element with id="demo"
@@ -141,7 +142,7 @@ function play_episode(episode) {
     audio.currentTime = 0; 
     audio.load(); //call this to just preload the audio without playing
     audio.play(); //call this to play the song right away
-    $("#play_pause").attr('src', 'radio-two/pause.png');
+    $("#play_pause").attr('src', 'images/pause.png');
 }
 
 function change_volume(vol){

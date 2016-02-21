@@ -23,8 +23,14 @@ os: linux
 #   "files" section altogether. A blank or incomplete "files" section
 #   may cause associated deployments to fail.
 files:
-  - source: /site
-    destination: /var/www/html/site
+  - source: /images
+    destination: /var/www/html/images
+  - source: /shows
+    destination: /var/www/html/shows
+  - source: /radio-site.css
+    destination: /var/www/html/
+  - source: /radio-site.js
+    destination: /var/www/html/
   - source: /appspec.yml
     destination: /var/www/html
   - source: /index.html
