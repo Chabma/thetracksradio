@@ -4,12 +4,12 @@ $(document).ready(function()
  {
      
      $( "#shows li" ).click(function(e) {
-         str = "radio-two/shows/"+$(this).attr("id")+".json";
+         str = "shows/"+$(this).attr("id")+".json";
          console.log(str);
          $.ajax({
             type: 'GET',
             dataType: "json",
-            url: "radio-two/shows/"+$(this).attr("id")+".json",
+            url: "shows/"+$(this).attr("id")+".json",
             success: function(result){
                 $("#episodes ul").html(null);
                 //console.log(result);
