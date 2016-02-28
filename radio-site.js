@@ -4,24 +4,8 @@ $(document).ready(function()
  {
      
      $( "#shows li" ).click(function(e) {
-         str = "shows/"+$(this).attr("id")+".json";
-         console.log(str);
-         $.ajax({
-            type: 'GET',
-            dataType: "json",
-            url: "shows/"+$(this).attr("id")+".json",
-            success: function(result){
-                $("#episodes ul").html(null);
-                //console.log(result);
-                queue = result.queue;
-                $.each(result.episodes, function(idx, episode) {
-	                $("#episodes ul").append('<li><button onclick= "play_episode(\''+episode.src+'\')">'+episode.name+'</button></li>\n');
-                });
-            },
-            error: function(xhr, status){
-                console.log(status);
-            }
-        });
+         str = ""+$("li").index("id")+"";
+         get_content(str);
          
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
@@ -148,5 +132,49 @@ function change_volume(vol){
     var audio = document.getElementById('player');
     audio.volume = vol/100;
 }
-                        
+
+function get_content(show_num) {
+    if (show_num == "") {
+        document.getElementById("#episodes ul").innerHTML = "";
+        return;
+    } else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("#episodes ul").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","getcontent.php?q="+str,true);
+        xmlhttp.send();
+    }
+}
+
+function play_song(show_num, episode_num, song_num) {
+    if (str == "") {
+        str = "home"
+        //document.getElementById("txtHint").innerHTML = "";
+        //return;
+    } else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","getuser.php?q="+str,true);
+        xmlhttp.send();
+    }
+}
                         
