@@ -12,7 +12,6 @@
             die('Could not connect: ' . mysqli_error($con));
         }
         mysqli_select_db($con,"thetracksradio_database");
-        echo($_GET['a']);
         $sql="SELECT * FROM Songs WHERE Show_Id = "$_GET['a']" AND Episode_Id = "$_GET['b']" AND Song_Num = "$_GET['c']"";
         $result = mysqli_query($con,$sql);
         while($row = mysqli_fetch_array($result)) {
