@@ -1,5 +1,6 @@
-queue = [];
-current_song = "";
+current_song_num = 0;
+current_show_num = 0;
+current_episode_num = 0;
 $(document).ready(function() 
  {
      
@@ -13,8 +14,8 @@ $(document).ready(function()
                             
      });
  
-    $( "#episodes li" ).click(function(){
-
+    $("#player").bind("ended", function(){
+        play_song(current_show_num, current_episode_num, current_song_num+1);  
     });
 
 
@@ -30,33 +31,28 @@ $(document).ready(function()
     });
 
      $( "#previous" ).click(function(e){
-        var index = queue.indexOf(current_song);
-        console.log(index);
         var audio = document.getElementById("player");
         if(audio.currentTime > (audio.duration / 30)){
-            console.log("current time : "+audio.currentTime);
-            console.log(audio.duration / 30);
-            play_episode(queue[index]);
+            audio.currentTime = 0;
         }
         else{
-            if(index == 0){
+            if(current_song_num == 0){
                 audio.pause();
                 audio.currentTime = 0;
             }else{
-                play_episode(queue[index - 1]);
+                play_song(current_show_num, current_episode_num, current_song_num - 1);
             }
         }
     });
      
      $( "#next" ).click(function(){
-        var index = queue.indexOf(current_song);
-        console.log(index);
-        if(index == queue.length - 1){
+         try{
+            play_song(current_show_num, current_episode_num, current_song_num + 1);
+        }
+        catch{
             var audio = document.getElementById("player");
             audio.pause();
             audio.currentTime = audio.duration;
-        }else{
-            play_episode(queue[index + 1]);
         }
     });
      
@@ -116,18 +112,6 @@ $(document).ready(function()
     document.body.style.backgroundImage = "url('images/good-photos/"+randomnumber+".JPG')";
 });
 
-function play_episode(episode) {
-    var audio = document.getElementById('player');
-    var source = document.getElementById('mp3Source');
-    current_song = episode;
-    source.src= episode;
-    console.log("current queue: "+queue);
-    audio.currentTime = 0; 
-    audio.load(); //call this to just preload the audio without playing
-    audio.play(); //call this to play the song right away
-    $("#play_pause").attr('src', 'images/button-images/pause.png');
-}
-
 function change_volume(vol){
     var audio = document.getElementById('player');
     audio.volume = vol/100;
@@ -156,25 +140,28 @@ function get_content(show_num) {
 }
 
 function play_song(show_num, episode_num, song_num) {
-    if (str == "") {
-        str = "home"
-        //document.getElementById("txtHint").innerHTML = "";
-        //return;
-    } else { 
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
-            }
-        };
-        xmlhttp.open("GET","getuser.php?q="+str,true);
-        xmlhttp.send();
+    var audio = document.getElementById('player');
+    var source = document.getElementById('mp3Source');
+    current_show_num = show_num;
+    current_episode_num = episode_num;
+    current_show_num = song_num;
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            source.src = xmlhttp.responseText;
+            audio.currentTime = 0; 
+            audio.load(); //call this to just preload the audio without playing
+            audio.play(); //call this to play the song right away
+            $("#play_pause").attr('src', 'images/button-images/pause.png');
+        }
+    };
+    xmlhttp.open("GET","getsong.php?a="+show_num+"&b="+episode_num"+&c="+song_num,true);
+    xmlhttp.send();
 }
                         
