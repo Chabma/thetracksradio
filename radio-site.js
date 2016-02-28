@@ -162,8 +162,8 @@ function play_song(show_num, episode_num, song_num) {
             while (matches = regex.exec(response)) {
                 output.push(matches[1]);
             }
-            console.log(JSON.stringify(output))
-            $("#mp3Source").attr('src', output[1]);
+            console.log(output)
+            $("#mp3Source").attr('src', output[0].trim());
             console.log(source.src);
             console.log("response: " + response);
             audio.currentTime = 0; 
