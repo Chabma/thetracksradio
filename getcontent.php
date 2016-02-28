@@ -15,7 +15,13 @@
         $sql="SELECT * FROM Episodes WHERE Show_Id = '".$q."'";
         $result = mysqli_query($con,$sql);
         while($row = mysqli_fetch_array($result)) {
-            echo('<li><button onclick= "play_song('+$row['Show_Id']+','+$row['Episode_Id']+',1)">'+$row['Title']+'</button></li>\n');
+            echo('<li><button onclick= "play_song(');
+            echo($row['Show_Id']);
+            echo(',');
+            echo($row['Episode_Id']);
+            echo(',1)">');
+            echo($row['Title']);
+            echo('</button></li>\n');
         }
         echo("whoa3");
         mysqli_close($con);
