@@ -133,7 +133,7 @@ function get_content(show_num) {
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById("episode_content").innerHTML = xmlhttp.responseText;
-                console.log(xmlhttp.response);
+                //console.log(xmlhttp.response);
             }
         };
         xmlhttp.open("GET","./getcontent.php?q="+str,true);
@@ -157,6 +157,7 @@ function play_song(show_num, episode_num, song_num) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             source.src = xmlhttp.responseText.match(/echo\('(.*)'\)/g);
+            console.log(xmlhttp.responseText.match(/echo\('(.*)'\)/g));
             audio.currentTime = 0; 
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song right away
