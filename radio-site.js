@@ -166,7 +166,7 @@ function play_song(show_num, episode_num, song_num) {
             $("#play_pause").attr('src', 'images/button-images/pause.png');
         }
     };
-    xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
+    xmlhttp.open("GET","./getsong.php?a='"+show_num+"'&b='"+episode_num+"'&c='"+song_num+"'",true);
     xmlhttp.send();
 }
                         
