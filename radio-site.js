@@ -5,7 +5,7 @@ $(document).ready(function()
  {
      
      $( "#shows li" ).click(function(e) {
-         str = ""+$("li").index("id")+"";
+         str = ""+$(this).index()+"";
          get_content(str);
          
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
@@ -119,10 +119,10 @@ function change_volume(vol){
 
 function get_content(show_num) {
     if (show_num == "") {
-        document.getElementById("#episode_content").innerHTML = "";
+        document.getElementById("episode_content").innerHTML = "";
         return;
     } else { 
-        console.log("show NUm: " + show_num);
+        console.log("show num: " + show_num);
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -132,7 +132,7 @@ function get_content(show_num) {
         }
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("#episode_content").innerHTML = xmlhttp.responseText;
+                document.getElementById("episode_content").innerHTML = xmlhttp.responseText;
             }
         };
         xmlhttp.open("GET","getcontent.php?q="+str,true);
