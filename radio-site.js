@@ -146,8 +146,7 @@ function play_song(show_num, episode_num, song_num) {
     var source = document.getElementById('mp3Source');
     current_show_num = show_num;
     current_episode_num = episode_num;
-    current_show_num = song_num;
-    console.log(song_num);
+    current_song_num = song_num;
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -158,7 +157,7 @@ function play_song(show_num, episode_num, song_num) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var response = xmlhttp.responseText;
-            source.src = response.match(/<body>([\s\S]*)<\/body>/);
+            $("#mp3source").attr('src', response.match(/<body>([\s\S]*)<\/body>/));
             console.log(source.src);
             console.log("response: " + response);
             audio.currentTime = 0; 
