@@ -119,7 +119,7 @@ function change_volume(vol){
 
 function get_content(show_num) {
     if (show_num == "") {
-        document.getElementById("#episodes ul").innerHTML = "";
+        document.getElementById("#episodes").getElementsByTagName("ul").innerHTML = "";
         return;
     } else { 
         if (window.XMLHttpRequest) {
@@ -131,7 +131,7 @@ function get_content(show_num) {
         }
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("#episodes ul").innerHTML = xmlhttp.responseText;
+                document.getElementById("#episodes").getElementsByTagName("ul").innerHTML = xmlhttp.responseText;
             }
         };
         xmlhttp.open("GET","getcontent.php?q="+str,true);
