@@ -8,7 +8,7 @@ $(document).ready(function()
          str = ""+$("li").index("id")+"";
          get_content(str);
          
-        //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
+        //docment.body.style.backgroundImage = "url('good-photos/27.jpg')";
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
         //history.pushState(null, null,window.location.pathname + "#"+ e.target.getAttribute("id"));
                             
