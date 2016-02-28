@@ -159,7 +159,7 @@ function play_song(show_num, episode_num, song_num) {
             response = xmlhttp.responseText;
             source.src = response.match(/echo\('(.*)'\)/g);
             console.log(source.src);
-            console.log("response: "response);
+            console.log("response: " + response);
             audio.currentTime = 0; 
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song right away
