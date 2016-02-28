@@ -152,7 +152,7 @@ function play_song(show_num, episode_num, song_num) {
         xmlhttp = new XMLHttpRequest();
     } else {
         // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP").match(/echo\('(.*)'\)/g);
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
