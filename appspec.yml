@@ -26,9 +26,9 @@ files:
   - source: /images
     destination: /var/www/html/images
   - source: /getcontent.php
-    destination: /var/www/html/getcontent.php
+    destination: /var/www/html/
   - source: /getsong.php
-    destination: /var/www/html/getsong.php
+    destination: /var/www/html/
   - source: /radio-site.css
     destination: /var/www/html/
   - source: /radio-site.js
