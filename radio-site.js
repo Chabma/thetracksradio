@@ -147,6 +147,7 @@ function play_song(show_num, episode_num, song_num) {
     current_show_num = show_num;
     current_episode_num = episode_num;
     current_show_num = song_num;
+    console.log(song_num);
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
