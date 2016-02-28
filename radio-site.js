@@ -156,7 +156,7 @@ function play_song(show_num, episode_num, song_num) {
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            response = xmlhttp.responseText;
+            console.log(xmlhttp.responseText);
             source.src = response.match(/echo\('(.*)'\)/g);
             console.log(source.src);
             console.log("response: " + response);
