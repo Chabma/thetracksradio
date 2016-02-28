@@ -7,7 +7,7 @@
         <?php
         $q = intval($_GET['q']);
 
-        $con = mysqli_connect('eastone.c3y2bcgdn85r.us','cam','fogter01','thetracksradio_database');
+        $con = mysqli_connect('eastone.c3y2bcgdn85r.us-east-1.rds.amazonaws.com','cam','fogter01','thetracksradio_database');
         if (!$con) {
             die('Could not connect: ' . mysqli_error($con));
         }
