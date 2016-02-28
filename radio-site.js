@@ -133,6 +133,7 @@ function get_content(show_num) {
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById("episode_content").innerHTML = xmlhttp.responseText;
+                console.log(xmlhttp.response);
             }
         };
         xmlhttp.open("GET","getcontent.php?q="+str,true);
