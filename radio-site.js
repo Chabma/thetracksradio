@@ -152,11 +152,11 @@ function play_song(show_num, episode_num, song_num) {
         xmlhttp = new XMLHttpRequest();
     } else {
         // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP").match(/echo\('(.*)'\)/g);
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            source.src = xmlhttp.responseText;
+            source.src = xmlhttp.responseText.match(/echo\('(.*)'\)/g);
             audio.currentTime = 0; 
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song right away
