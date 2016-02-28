@@ -157,7 +157,12 @@ function play_song(show_num, episode_num, song_num) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var response = xmlhttp.responseText;
-            $("#mp3Source").attr('src', response.match(/<body>([\s\S]*)<\/body>/));
+            var regex = "/<body>([\s\S]*)<\/body>/";
+            var matches, output = [];
+            while (matches = regex.exec(response)) {
+                output.push(matches[1]);
+            }
+            $("#mp3Source").attr('src', output[1]);
             console.log(source.src);
             console.log("response: " + response);
             audio.currentTime = 0; 
