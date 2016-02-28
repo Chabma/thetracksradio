@@ -5,7 +5,7 @@ $(document).ready(function()
  {
      
      $( "#shows li" ).click(function(e) {
-         str = ""+$(this).index()+"";
+         str = ""+($(this).index() + 1)+"";
          get_content(str);
          
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
