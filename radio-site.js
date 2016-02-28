@@ -157,7 +157,7 @@ function play_song(show_num, episode_num, song_num) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var response = xmlhttp.responseText;
-            var regex = "/<body>([\s\S]*)<\/body>/";
+            var regex = /<body>([\s\S]*)<\/body>/g;
             var matches, output = [];
             while (matches = regex.exec(response)) {
                 output.push(matches[1]);
