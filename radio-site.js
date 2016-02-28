@@ -49,7 +49,7 @@ $(document).ready(function()
          try{
             play_song(current_show_num, current_episode_num, current_song_num + 1);
         }
-        catch{
+        catch(err){
             var audio = document.getElementById("player");
             audio.pause();
             audio.currentTime = audio.duration;
