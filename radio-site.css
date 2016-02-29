@@ -140,6 +140,7 @@ progress{
 #buttons img{
     margin: auto;
     max-height: 60%;
+    max-width: 27%;
     display: inline-block;
 }
 
@@ -169,18 +170,23 @@ progress{
 #time p{
     display: inherit;
     margin: auto;
+    font-size: 20px;
+    font-size: 2vw;
 }
 
 #volume img{
+
     display: inline-block;
     margin: auto;
     max-height: 50%;
+    max-width: 25%;
     vertical-align: middle;
 }
 
 #volume_progress{
     display: inline-block;
     vertical-align: middle;
+    max-width: 60%;
 }
 #episodes {
     width: 100%;
