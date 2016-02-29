@@ -172,7 +172,7 @@ function play_song(show_num, episode_num, song_num) {
             console.log("response: " + response);
             audio.currentTime = 0; 
             audio.load(); //call this to just preload the audio without playing
-            audio.play(); //call this to play the song right away
+            audio.play(); //call this to play the song
             $("#play_pause").attr('src', 'images/button-images/pause.png');
         }
     };
