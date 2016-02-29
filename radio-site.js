@@ -161,7 +161,7 @@ function play_song(show_num, episode_num, song_num) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
             while (matches = regex.exec(response)) {
-                console.log(matches[1]);
+                console.log(matches[0]);
                 output.push(matches[1]);
             }
             console.log("response: " + response);
