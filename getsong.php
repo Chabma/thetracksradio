@@ -23,7 +23,7 @@
         mysqli_close($con);
         ?>
         </div>
-        
+        ~
         <div class="results">
         <?php
         $a = intval($_GET['a']);
