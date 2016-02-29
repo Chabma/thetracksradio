@@ -32,25 +32,26 @@
             </div>
         </div>
         <div id="bottom">
-            <div id="player-controls">
-                <div id="buttons">
+            <div id="buttons-div">
+            <div id="buttons">
                 <img id="previous" src="images/button-images/previous.png">
                 <img id="play_pause" src="images/button-images/play.png">
                 <img id="next" src="images/button-images/next.png">
-                </div>
-                <div>
-                    <div width = 100% >    
-                    <input type="range"  id="audio_progress" value="0" max="100" >
-                    </div> 
-                    <div width = 100% >
-                        <p id ="songTitle">NULL</p>
-                    </div>
-                </div>    
-                <div id="time"><p id="current_minutes">88</p><p>:</p><p id="current_seconds">88</p><p>  /  </p><p id="max_minutes">88</p><p>:</p><p id="max_seconds">88</p></div>
-                <img id="volume" src="images/button-images/volume.png">
-                <input type="range" id="volume_progress" value="0" max="100" oninput="change_volume(this.value)" onchange="change_volume(this.value)">
-                
             </div>
+            </div>
+            <div id = "middle-bottom">
+                <div id ="title_div">
+                        <p id ="songTitle">NULL</p>
+                </div>
+                <div id="middle-bottom-bottom">   
+                    <input type="range"  id="audio_progress" value="0" max="100">
+                </div> 
+            </div>    
+            <div id="time"><p id="current_minutes">88</p><p>:</p><p id="current_seconds">88</p><p>  /  </p><p id="max_minutes">88</p><p>:</p><p id="max_seconds">88</p></div>
+            <div id="volume">
+                    <img src="images/button-images/volume.png" display="inline-block">
+                    <input type="range" id="volume_progress" value="0" max="100" oninput="change_volume(this.value)" onchange="change_volume(this.value)" display="inline-block">
+            </div>    
             <audio id="player">
                 <source id="mp3Source" type="audio/mp3">
                 Your browser does not support the audio format.

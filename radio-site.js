@@ -167,7 +167,7 @@ function play_song(show_num, episode_num, song_num) {
             console.log("response: " + response);
             console.log(output)
             $("#mp3Source").attr('src', output[0].trim());
-            $("#songTitle").text(output[1]);
+            $("#songTitle").text(output[1].trim());
             console.log(source.src);
             console.log("response: " + response);
             audio.currentTime = 0; 

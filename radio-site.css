@@ -40,13 +40,16 @@ progress{
     position: fixed;
     bottom: -0%;
     width: 100%;
+    border-bottom: small solid black;
+    background-color: rgba(255,255,255,0.5);
+    margin: auto;
 }
 
 #logo {
+    text-align: center;
     padding-top: 15px;
-    height: 130px;
+    vertical-align: middle;
     min-width: auto;
-    width:270px;
     margin: auto;
     font-size: 3em;
     color: aquamarine;
@@ -99,44 +102,87 @@ progress{
     width: 70%;
 }
 
-#player-controls{
+#buttons{
     height: 100%;
-    margin-top: 1%;
+    width: auto;
+    margin: auto;
     display: inline-block;
-    width: 100%;
+}
+#buttons-div{
+    padding-left: 10%;
+    width: 15%;
+    height: 100%;
+    margin: auto;
+    display: inline-block;
+    margin-top: 1%;
 }
 
-#buttons{
-    padding-left: 10%;
-    width: 20%;
+#middle-bottom{
     height: 100%;
     display: inline-block;
-}
-#buttons img{
-    height: 40%;
-    display: inline-block;
-}
-#audio_progress{
-    width: 40%;
+    width: 46%;
+    margin: auto;
 }
 
 #time {
     display: inline-block;
     width: 10%;
-    margin: 0;
-}
-#time p{
-    display: inherit;
-    margin: 0;
+    height: 60%;
+    margin: 0 auto 0 auto;
+    vertical-align: middle;
+    text-align: center;
 }
 
 #volume {
     display: inline-block;
-    height: 40%;
-    max-width: 10%;
+    height: 100%;
+    width: 15%;
+    margin: auto;
+    padding-right: 2%;
 }
+
+#buttons img{
+    margin: auto;
+    max-height: 45%;
+    display: inline-block;
+}
+
+#audio_progress{
+    width: 100%;
+    margin: auto;
+    vertical-align: middle;
+}
+
+#title_div{
+    vertical-align: middle;
+}
+
+#middle-bottom-bottom{
+    width: 90%;
+    margin: auto;
+    vertical-align: middle;
+}
+
+#songTitle{
+    background-color: white;
+    font-size: 13px;
+    text-align: center;
+    margin: auto;
+}
+
+#time p{
+    display: inherit;
+    margin: auto;
+}
+
+#volume img{
+    display: inline-block;
+    margin: auto;
+    max-height: 40%;
+}
+
 #volume_progress{
-    width: 5%;
+    display: inline-block;
 }
 #episodes {
     width: 100%;
