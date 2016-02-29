@@ -162,6 +162,7 @@ function play_song(show_num, episode_num, song_num) {
             while (matches = regex.exec(response)) {
                 output.push(matches[1]);
             }
+            console.log("response: " + response);
             console.log(output)
             $("#mp3Source").attr('src', output[0].trim());
             $("#songTitle").text(output[1]);
