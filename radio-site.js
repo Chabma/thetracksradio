@@ -64,7 +64,7 @@ $(document).ready(function()
     function seek(loc){
         audio.pause();
         audio.currentTime = loc;
-        console.log("seeked to "+ loc +" now at "+ audio.currentTime);
+        //console.log("seeked to "+ loc +" now at "+ audio.currentTime);
         audio.play();
      }
      
@@ -122,7 +122,7 @@ function get_content(show_num) {
         document.getElementById("episode_content").innerHTML = "";
         return;
     } else { 
-        console.log("show num: " + show_num);
+        //console.log("show num: " + show_num);
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -161,15 +161,13 @@ function play_song(show_num, episode_num, song_num) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
             while (matches = regex.exec(response)) {
-                console.log(matches[1]);
+                //console.log(matches[1]);
                 output.push(matches[1]);
             }
-            console.log("response: " + response);
-            console.log(output)
+            //console.log("response: " + response);
+            //console.log(output)
             $("#mp3Source").attr('src', output[0].trim());
             $("#songTitle").text(output[1].trim());
-            console.log(source.src);
-            console.log("response: " + response);
             audio.currentTime = 0; 
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song

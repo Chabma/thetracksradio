@@ -116,6 +116,7 @@ progress{
     display: inline-block;
     width: 46%;
     margin: auto;
+    vertical-align: middle;
 }
 
 #time {
@@ -137,7 +138,7 @@ progress{
 
 #buttons img{
     margin: auto;
-    max-height: 65%;
+    max-height: 60%;
     display: inline-block;
 }
 
