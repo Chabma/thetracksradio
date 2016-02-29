@@ -172,6 +172,8 @@ progress{
     margin: auto;
     font-size: 20px;
     font-size: 2vw;
+    font-kerning: normal;
+    font-family: "Satisfy","Pacifico","Lobster";
 }
 
 #volume img{
