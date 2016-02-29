@@ -144,6 +144,9 @@ function get_content(show_num) {
 function play_song(show_num, episode_num, song_num) {
     var audio = document.getElementById('player');
     var source = document.getElementById('mp3Source');
+    var response = null;
+    var regex = /<div class="results">[\s\S]*?<\/div>/g;
+    var matches, output = [];
     current_show_num = show_num;
     current_episode_num = episode_num;
     current_song_num = song_num;
@@ -156,9 +159,7 @@ function play_song(show_num, episode_num, song_num) {
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var response = xmlhttp.responseText;
-            var regex = /<div class="results">[\s\S]*?<\/div>/g;
-            var matches, output = [];
+            response = xmlhttp.responseText;
             while (matches = regex.exec(response)) {
                 console.log(matches[1]);
                 output.push(matches[1]);
