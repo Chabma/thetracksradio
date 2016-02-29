@@ -160,6 +160,7 @@ function play_song(show_num, episode_num, song_num) {
             var regex = /<div class="results">[\s\S]*?<\/div>/g;
             var matches, output = [];
             while (matches = regex.exec(response)) {
+                console.log(matches[1]);
                 output.push(matches[1]);
             }
             console.log("response: " + response);
