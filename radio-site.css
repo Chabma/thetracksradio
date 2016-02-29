@@ -103,12 +103,6 @@ progress{
 }
 
 #buttons{
-    height: 100%;
-    width: auto;
-    margin: auto;
-    display: inline-block;
-}
-#buttons-div{
     padding-left: 10%;
     width: 15%;
     height: 100%;
@@ -143,7 +137,7 @@ progress{
 
 #buttons img{
     margin: auto;
-    max-height: 45%;
+    max-height: 65%;
     display: inline-block;
 }
 
@@ -178,7 +172,7 @@ progress{
 #volume img{
     display: inline-block;
     margin: auto;
-    max-height: 40%;
+    max-height: 50%;
 }
 
 #volume_progress{
