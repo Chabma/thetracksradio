@@ -22,9 +22,9 @@
             echo($row['IMG_Location']);
             echo('"><div class="episodes-paragraph"><h3>');
             echo($row['Title']);
-            echo('</h3><p>"');
+            echo('</h3><p>');
             echo($row['Description']);
-            echo('"</p></li>');
+            echo('</p></li>');
         }
         mysqli_close($con);
         ?>

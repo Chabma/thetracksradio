@@ -230,6 +230,7 @@ progress{
     width: 50%;
     max-height: 100%;
     overflow: auto;
+    font-family: "Amatic SC","Satisfy","Pacifico","Lobster";
 }
 
 #episodes li:hover { 
