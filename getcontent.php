@@ -22,17 +22,11 @@
             echo(',1)">');
             echo('<img height = 100% src=');
             echo($row['IMG_Location']);
-            echo("><div class=\"episodes-paragraph\"><h3>");
+            echo('><div class=\"episodes-paragraph\"><h3>');
             echo($row['Title']);
             echo('</h3><p>')
             echo($row['Description']);
-            echo("</p></li>");    
-            echo('<li onclick= "play_song(');
-            echo($row['Show_Id']);
-            echo(',');
-            echo($row['Episode_Id']);
-            echo(',1)">');
-            echo('</li>\n');
+            echo('</p></li>\n');
         }
         echo("whoa3");
         mysqli_close($con);
