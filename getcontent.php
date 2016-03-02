@@ -24,7 +24,7 @@
             echo($row['Title']);
             echo('</h3><p>"');
             echo($row['Description']);
-            echo('"</p></li>\n');
+            echo('"</p></li>');
         }
         mysqli_close($con);
         ?>
