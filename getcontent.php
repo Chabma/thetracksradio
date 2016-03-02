@@ -5,12 +5,10 @@
     <body>
         <?php
         $q = intval($_GET['q']);
-        echo("whoa1");
         $con = mysqli_connect('eastone.c3y2bcgdn85r.us-east-1.rds.amazonaws.com','cam','fogter01','thetracksradio_database');
         if (!$con) {
             die('Could not connect: ' . mysqli_error($con));
         }
-        echo("whoa2");
         mysqli_select_db($con,"thetracksradio_database");
         $sql="SELECT * FROM Episodes WHERE Show_Id = '".$q."'";
         $result = mysqli_query($con,$sql);
@@ -28,7 +26,6 @@
             echo($row['Description']);
             echo('"</p></li>\n');
         }
-        echo("whoa3");
         mysqli_close($con);
         ?>
     </body>
