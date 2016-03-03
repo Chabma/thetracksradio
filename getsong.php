@@ -24,7 +24,7 @@
                 // Format the string to be signed
                 $string = sprintf("GET\n\n\n%s\n/%s/%s", $expiry, $bucket, $path);
 
-                // Generate an HMAC-SHA1 signature for it
+                // Generate an HMAC-SHA1 signature for it, simpler times.
                 $signature = base64_encode(hash_hmac('sha1', $string, $secret, true));
 
                 // Create the final URL
