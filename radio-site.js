@@ -67,7 +67,9 @@ $(document).ready(function()
         }
     });
      
-     audio.onloadedmetadata = function(){ audio.currentTime = starting_elasped_song_duration;}
+     audio.onloadedmetadata = function(){ audio.currentTime = starting_elasped_song_duration;
+                                          starting_elasped_song_duration = 0;
+                                        }
      var audio_prog = document.getElementById("audio_progress");
      audio_prog.onchange = function() {seek(audio_prog.value)};
      
@@ -213,7 +215,7 @@ function open_doc(show_num, episode_num, arbitrary_num){
     xmlhttp.send();
 }
 
-function play_song(show_num, episode_num, song_num) {
+function play_song(show_num, episode_num, song_num, _callback) {
     var source = document.getElementById('mp3Source');
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
@@ -242,6 +244,9 @@ function play_song(show_num, episode_num, song_num) {
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song
             $("#play_pause").attr('src', 'images/button-images/pause.png');
+            if(_callback){
+                _callback();
+            }
         }
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
@@ -287,7 +292,9 @@ function checkCookies() {
         current_show_num = parseInt(show_num);
         current_episode_num = parseInt(episode_num);
         starting_elasped_song_duration = elapsed_song_duration;
-        play_song(current_show_num, current_episode_num, current_song_num)
+        play_song(current_show_num, current_episode_num, current_song_num, function(){
+            audio.pause();
+        });
     }
     else{
         //console.log("Did not find all cookies");
