@@ -70,13 +70,6 @@ $(document).ready(function()
      audio.onloadedmetadata = function(){ audio.currentTime = 0; }
      var audio_prog = document.getElementById("audio_progress");
      audio_prog.onchange = function() {seek(audio_prog.value)};
-    
-    function seek(loc){
-        audio.pause();
-        audio.currentTime = loc;
-        //console.log("seeked to "+ loc +" now at "+ audio.currentTime);
-        audio.play();
-     }
      
     
     audio.ontimeupdate = function() {update_duration()};
@@ -139,6 +132,13 @@ $(document).ready(function()
 
 function change_volume(vol){
     audio.volume = vol/100;
+}
+
+function seek(loc){
+    audio.pause();
+    audio.currentTime = loc;
+    console.log("seeked to "+ loc +" now at "+ audio.currentTime);
+    audio.play();
 }
 
 function get_home_content() {
@@ -286,8 +286,7 @@ function checkCookies() {
         current_episode_num = parseInt(episode_num);
         play_song(current_show_num, current_episode_num, current_song_num);
         console.log("playing!");
-        audio.pause();
-        audio.currentTime = parseInt(elapsed_song_duration);
+        seek(parseInt(elapsed_song_duration));
         console.log("attempted to change audio current time");
         console.log(audio.currentTime);
     }
