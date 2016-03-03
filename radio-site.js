@@ -134,10 +134,16 @@ function change_volume(vol){
 }
 
 function seek(loc){
-    audio.pause();
-    audio.currentTime = loc;
-    console.log("seeked to "+ loc +" now at "+ audio.currentTime);
-    audio.play();
+    if(audio.paused){
+        audio.currentTime = loc;
+        console.log("seeked to "+ loc +" now at "+ audio.currentTime);
+    }
+    else{
+        audio.pause();
+        audio.currentTime = loc;
+        console.log("seeked to "+ loc +" now at "+ audio.currentTime);
+        audio.play();
+    }
 }
 
 function get_home_content() {
@@ -244,6 +250,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
             if(_callback){
                 _callback();
             }
+            console.log("right after the callback:"+audio.currentTime);
         }
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
