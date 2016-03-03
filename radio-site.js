@@ -1,6 +1,7 @@
 current_song_num = 0;
 current_show_num = 0;
 current_episode_num = 0;
+starting_elasped_song_duration = 0;
 audio = document.getElementById('player');
 $(document).ready(function() 
  {
@@ -66,8 +67,7 @@ $(document).ready(function()
         }
     });
      
-     audio.onloadedmetadata = function(){ //audio.currentTime = 0; console.log("loaded song data");
-                                        }
+     audio.onloadedmetadata = function(){ audio.currentTime = starting_elasped_song_duration;}
      var audio_prog = document.getElementById("audio_progress");
      audio_prog.onchange = function() {seek(audio_prog.value)};
      
@@ -117,13 +117,8 @@ $(document).ready(function()
     
     //on webpage leave, sets cookies
     $(window).on('unload', function() {
-        console.log("song_num = "+current_song_num);
-        console.log("show_num = "+current_show_num);
-        console.log("episode_num = "+current_episode_num);
-        console.log("duration = "+audio.currentTime);
         if(current_song_num != 0 && current_show_num != 0 && current_episode_num != 0){
             setCookies();
-            console.log("attempted to set all cookies");
         }
     });
 
@@ -137,12 +132,12 @@ function change_volume(vol){
 function seek(loc){
     if(audio.paused){
         audio.currentTime = loc;
-        console.log("seeked to "+ loc +" now at "+ audio.currentTime);
+        //console.log("seeked to "+ loc +" now at "+ audio.currentTime);
     }
     else{
         audio.pause();
         audio.currentTime = loc;
-        console.log("seeked to "+ loc +" now at "+ audio.currentTime);
+        //console.log("seeked to "+ loc +" now at "+ audio.currentTime);
         audio.play();
     }
 }
@@ -218,7 +213,7 @@ function open_doc(show_num, episode_num, arbitrary_num){
     xmlhttp.send();
 }
 
-function play_song(show_num, episode_num, song_num, _callback) {
+function play_song(show_num, episode_num, song_num) {
     var source = document.getElementById('mp3Source');
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
@@ -244,14 +239,9 @@ function play_song(show_num, episode_num, song_num, _callback) {
             //console.log(output)
             $("#mp3Source").attr('src', output[0].trim());
             $("#songTitle").text(output[1].trim());
-            audio.currentTime = 0; 
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song
             $("#play_pause").attr('src', 'images/button-images/pause.png');
-            if(_callback){
-                _callback();
-            }
-            console.log("right after the callback:"+audio.currentTime);
         }
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
@@ -265,7 +255,7 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
-    console.log("set "+cname+" cookie");
+    //console.log("set "+cname+" cookie");
 }
 
 function setCookies(){
@@ -292,20 +282,15 @@ function checkCookies() {
     var episode_num=getCookie("episode_num");
     var elapsed_song_duration=getCookie("elasped_song_duration");
     if (song_num!="" && show_num!="" && episode_num!="" && elapsed_song_duration!="") {
-        console.log("Found all cookies!");
+        //console.log("Found all cookies!");
         current_song_num = parseInt(song_num);
         current_show_num = parseInt(show_num);
         current_episode_num = parseInt(episode_num);
-        play_song(current_show_num, current_episode_num, current_song_num, function(){
-            console.log("playing!");
-            seek(parseInt(elapsed_song_duration));
-            console.log("attempted to change audio current time");
-            console.log("inside cookie check"+audio.currentTime);
-            audio.pause();
-        });
+        starting_elasped_song_duration = elapsed_song_duration;
+        play_song(current_show_num, current_episode_num, current_song_num)
     }
     else{
-        console.log("Did not find all cookies");
+        //console.log("Did not find all cookies");
     }
 }
                         
