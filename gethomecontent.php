@@ -23,12 +23,12 @@
             echo($row['Title']);
             echo('</h3><p>');
             echo($row['Description']);
-            echo('\n Duration: ');
-            echo(Math.round($row['Duration'])/360);
+            echo('<br>Duration: ');
+            echo(floor($row['Duration']/360));
             echo(':');
-            echo(Math.round($row['Duration'])/60);
+            echo(floor(($row['Duration']%360)/60));
             echo(':');
-            echo(Math.round($row['Duration'])%60 );
+            echo(floor($row['Duration'])%60) );
             echo('</p></li>');
         }
         mysqli_close($con);
