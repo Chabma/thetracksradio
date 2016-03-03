@@ -78,9 +78,6 @@
     }
   }       
             
-            
-
-            $request = $s3Client->createPresignedRequest($cmd, '+20 minutes');
             mysqli_select_db($con,"thetracksradio_database");
             //echo("SELECT * FROM Songs WHERE Show_Id = ".$a." AND Episode_Id = ".$b." AND Song_Num = ".$c."");
             $sql="SELECT * FROM Songs WHERE Show_Id = '".$a."' AND Episode_Id = '".$b."' AND Song_Num = '".$c."'";
