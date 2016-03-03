@@ -257,7 +257,7 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function setCookies(){
-    setCookie("song_num", current_song_nume, 1);
+    setCookie("song_num", current_song_num, 1);
     setCookie("show_num", current_show_num, 1);
     setCookie("episode_num", current_episode_num, 1);
     setCookie("elasped_song_duration", audio.currentTime, 1);
