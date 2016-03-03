@@ -212,7 +212,7 @@ function open_doc(show_num, episode_num, arbitrary_num){
     xmlhttp.send();
 }
 
-function play_song(show_num, episode_num, song_num) {
+function play_song(show_num, episode_num, song_num, _callback) {
     var source = document.getElementById('mp3Source');
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
@@ -246,6 +246,10 @@ function play_song(show_num, episode_num, song_num) {
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
     xmlhttp.send();
+    
+    if(_callback){
+        _callback();
+    }
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -284,11 +288,12 @@ function checkCookies() {
         current_song_num = parseInt(song_num);
         current_show_num = parseInt(show_num);
         current_episode_num = parseInt(episode_num);
-        play_song(current_show_num, current_episode_num, current_song_num);
-        console.log("playing!");
-        seek(parseInt(elapsed_song_duration));
-        console.log("attempted to change audio current time");
-        console.log(audio.currentTime);
+        play_song(current_show_num, current_episode_num, current_song_num, function(){
+            console.log("playing!");
+            seek(parseInt(elapsed_song_duration));
+            console.log("attempted to change audio current time");
+            console.log(audio.currentTime);
+        });
     }
     else{
         console.log("Did not find all cookies");
