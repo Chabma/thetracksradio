@@ -1,8 +1,12 @@
 current_song_num = 0;
 current_show_num = 0;
 current_episode_num = 0;
+audio = document.getElementById('player');
 $(document).ready(function() 
  {
+    //checks for cookies and reacts accordingly
+    checkCookies();
+    
     $( "#logo" ).click(function(e) {
         $("#episode_content").html("");          
      });
@@ -39,7 +43,6 @@ $(document).ready(function()
     });
 
      $( "#previous" ).click(function(e){
-        var audio = document.getElementById("player");
         if(audio.currentTime > (audio.duration / 30)){
             audio.currentTime = 0;
         }
@@ -58,13 +61,11 @@ $(document).ready(function()
             play_song(current_show_num, current_episode_num, current_song_num + 1);
         }
         catch(err){
-            var audio = document.getElementById("player");
             audio.pause();
             audio.currentTime = audio.duration;
         }
     });
      
-     var audio = document.getElementById("player");
      audio.onloadedmetadata = function(){ audio.currentTime = 0; }
      var audio_prog = document.getElementById("audio_progress");
      audio_prog.onchange = function() {seek(audio_prog.value)};
@@ -120,8 +121,10 @@ $(document).ready(function()
     document.body.style.backgroundImage = "url('images/good-photos/"+randomnumber+".JPG')";
 });
 
+//on webpage leave, sets cookies
+$( window ).unload(setCookies());
+
 function change_volume(vol){
-    var audio = document.getElementById('player');
     audio.volume = vol/100;
 }
 
@@ -197,7 +200,6 @@ function open_doc(show_num, episode_num, arbitrary_num){
 }
 
 function play_song(show_num, episode_num, song_num) {
-    var audio = document.getElementById('player');
     var source = document.getElementById('mp3Source');
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
@@ -231,5 +233,45 @@ function play_song(show_num, episode_num, song_num) {
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
     xmlhttp.send();
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function setCookies(){
+    setCookie("song_num", current_song_nume, 1);
+    setCookie("show_num", current_show_num, 1);
+    setCookie("episode_num", current_episode_num, 1);
+    setCookie("elasped_song_duration", audio.currentTime, 1);
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
+function checkCookies() {
+    var song_num=getCookie("song_num");
+    var show_num=getCookie("show_num");
+    var episode_num=getCookie("episode_num");
+    var elapsed_song_duration=getCookie("elasped_song_duration");
+    if (song_num!="" && show_num!="" && episode_num!="" && elapsed_song_duration!="") {
+        current_song_num = parseInt(song_num);
+        current_show_num = parseInt(show_num);
+        current_episode_num = parseInt(episode_num);
+        play_song(current_show_num, current_episode_num, current_song_num);
+        audio.pause();
+        audio.currentTime = parseInt(duration);
+    }
 }
                         
