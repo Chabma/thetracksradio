@@ -4,7 +4,7 @@ current_episode_num = 0;
 $(document).ready(function() 
  {
     $( "#logo" ).click(function(e) {
-        document.getElementById("episode_content").innerHTML = "";          
+        $("#episode_content").html("");          
      });
     
      $( "#shows li" ).click(function(e) {
@@ -136,7 +136,7 @@ function get_home_content() {
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            document.getElementById("episode_content").innerHTML = xmlhttp.responseText;
+            $("#episode_content").html(xmlhttp.responseText);
             //console.log(xmlhttp.response);
         }
     };
@@ -146,7 +146,7 @@ function get_home_content() {
 
 function get_content(show_num) {
     if (show_num == "") {
-        document.getElementById("episode_content").innerHTML = "";
+        $("#episode_content").html("");     
         return;
     } else { 
         //console.log("show num: " + show_num);
@@ -159,7 +159,7 @@ function get_content(show_num) {
         }
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("episode_content").innerHTML = xmlhttp.responseText;
+                $("#episode_content").html(xmlhttp.responseText);
                 //console.log(xmlhttp.response);
             }
         };
@@ -169,7 +169,31 @@ function get_content(show_num) {
 }
 
 function open_doc(show_num, episode_num, arbitrary_num){
-    
+    var response = null;
+    var regex = /<div class="results">([\s\S]*?)<\/div>/g;
+    var matches, output = [];
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            response = xmlhttp.responseText;
+            while (matches == regex.exec(response)) {
+                //console.log(matches[1]);
+                output.push(matches[1]);
+            }
+            //console.log("response: " + response);
+            //console.log(output)
+            $("#episode_content").html("");
+            $("#episode_content").load(output[0].trim());
+        }
+    };
+    xmlhttp.open("GET","./getdoc.php?a="+show_num+"&b="+episode_num+"&c="+arbitrary_num+"",true);
+    xmlhttp.send();
 }
 
 function play_song(show_num, episode_num, song_num) {
@@ -191,7 +215,7 @@ function play_song(show_num, episode_num, song_num) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
-            while (matches = regex.exec(response)) {
+            while (matches == regex.exec(response)) {
                 //console.log(matches[1]);
                 output.push(matches[1]);
             }
