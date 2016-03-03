@@ -36,12 +36,15 @@
                 );
             }       
             
+            $client = S3Client::factory(array('default'));
+            $signedUrl = $client->getObjectUrl('my-bucket', 'filename.ext', '+10 minutes');
             mysqli_select_db($con,"thetracksradio_database");
             //echo("SELECT * FROM Songs WHERE Show_Id = ".$a." AND Episode_Id = ".$b." AND Song_Num = ".$c."");
             $sql="SELECT * FROM Songs WHERE Show_Id = '".$a."' AND Episode_Id = '".$b."' AND Song_Num = '".$c."'";
             $result = mysqli_query($con,$sql);
             while($row = mysqli_fetch_array($result)) {
-                echo(getTemporaryUrl("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX", "thetracksradio-mp3s", $row['Path'],100));
+                //echo(getTemporaryUrl("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX", "thetracksradio-mp3s", $row['Path'],100));
+                echo($signedUrl);
             }
             mysqli_close($con);
         ?>
