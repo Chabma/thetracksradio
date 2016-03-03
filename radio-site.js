@@ -245,6 +245,7 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
+    console.log("set "+cname+" cookie");
 }
 
 function setCookies(){
@@ -271,6 +272,7 @@ function checkCookies() {
     var episode_num=getCookie("episode_num");
     var elapsed_song_duration=getCookie("elasped_song_duration");
     if (song_num!="" && show_num!="" && episode_num!="" && elapsed_song_duration!="") {
+        console.log("Found all cookies!");
         current_song_num = parseInt(song_num);
         current_show_num = parseInt(show_num);
         current_episode_num = parseInt(episode_num);
