@@ -11,6 +11,7 @@
         mysqli_select_db($con,"thetracksradio_database");
         $sql="SELECT * FROM Episodes ORDER BY Duration DESC";
         $result = mysqli_query($con,$sql);
+        $count = mysqli_num_rows($result);  
         while($row = mysqli_fetch_array($result)) {
             echo('<li onclick= "');
             echo($row['Function']);
@@ -24,15 +25,17 @@
             echo($row['Title']);
             echo('</h3><p>');
             echo($row['Description']);
-            echo('<br>Duration: ');
-            echo(floor($row['Duration']/3600));
-            echo(':');
-            echo(sprintf("%02d", floor(($row['Duration']%3600)/60)));
-            echo(':');
-            echo(sprintf("%02d", floor($row['Duration']%60)));
-            echo(', ');
-            echo(count(mysqli_fetch_array($result)));    
-            echo(' songs');    
+            if($row['Function'] == 'play_song('){
+                echo('<br>Duration: ');
+                echo(floor($row['Duration']/3600));
+                echo(':');
+                echo(sprintf("%02d", floor(($row['Duration']%3600)/60)));
+                echo(':');
+                echo(sprintf("%02d", floor($row['Duration']%60)));
+                echo(', ');
+                echo($count));    
+                echo(' songs'); 
+            }   
             echo('</p></li>');
         }
         mysqli_close($con);

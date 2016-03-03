@@ -12,6 +12,7 @@
         mysqli_select_db($con,"thetracksradio_database");
         $sql="SELECT * FROM Episodes WHERE Show_Id = '".$q."'";
         $result = mysqli_query($con,$sql);
+        $count = mysqli_num_rows($result);  
         while($row = mysqli_fetch_array($result)) {
             echo('<li onclick= "');
             echo($row['Function']);
@@ -33,7 +34,7 @@
                 echo(':');
                 echo(sprintf("%02d", floor($row['Duration']%60)));
                 echo(', ');
-                echo count(mysqli_fetch_all($result));    
+                echo($count));    
                 echo(' songs'); 
             }
             echo('</p></li>');
