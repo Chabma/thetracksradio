@@ -23,8 +23,6 @@ os: linux
 #   "files" section altogether. A blank or incomplete "files" section
 #   may cause associated deployments to fail.
 files:
-  - source: /images
-    destination: /var/www/html/images
   - source: /getcontent.php
     destination: /var/www/html/
   - source: /gethomecontent.php
