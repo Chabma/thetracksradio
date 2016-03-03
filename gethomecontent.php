@@ -26,9 +26,12 @@
             echo('<br>Duration: ');
             echo(floor($row['Duration']/3600));
             echo(':');
-            echo(floor(($row['Duration']%3600)/60));
+            echo(sprintf("%02d", floor(($row['Duration']%3600)/60)));
             echo(':');
-            echo(floor($row['Duration'])%60);
+            echo(sprintf("%02d", floor($row['Duration']%60)));
+            echo(', ');
+            echo(count($result));    
+            echo(' Songs');    
             echo('</p></li>');
         }
         mysqli_close($con);
