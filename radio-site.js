@@ -260,10 +260,14 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
-    //console.log("set "+cname+" cookie");
+    console.log("set "+cname+" cookie");
 }
 
 function setCookies(){
+    console.log("song_num:"+ current_song_num);
+    console.log("show_num:"+ current_show_num);
+    console.log("episode_num;"+ current_episode_num);
+    console.log("elasped_song_duration:"+ audio.currentTime);
     setCookie("song_num", current_song_num, 1);
     setCookie("show_num", current_show_num, 1);
     setCookie("episode_num", current_episode_num, 1);
