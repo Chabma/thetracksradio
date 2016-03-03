@@ -66,7 +66,7 @@ $(document).ready(function()
         }
     });
      
-     audio.onloadedmetadata = function(){ audio.currentTime = 0; }
+     audio.onloadedmetadata = function(){ audio.currentTime = 0; console.log("loaded song data");}
      var audio_prog = document.getElementById("audio_progress");
      audio_prog.onchange = function() {seek(audio_prog.value)};
      
