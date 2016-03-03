@@ -25,7 +25,7 @@ os: linux
 files:
   - source: /images/button-images/
     destination: /var/www/html/images/button-images
-  - source: /images/button-images/favicon.ico
+  - source: /images/favicon.ico
     destination: /var/www/html/images/
   - source: /getcontent.php
     destination: /var/www/html/
