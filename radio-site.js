@@ -4,6 +4,7 @@ current_episode_num = 0;
 audio = document.getElementById('player');
 $(document).ready(function() 
  {
+    audio = document.getElementById('player');
     //checks for cookies and reacts accordingly
     checkCookies();
     
