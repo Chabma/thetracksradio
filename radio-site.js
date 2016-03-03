@@ -286,7 +286,7 @@ function checkCookies() {
         current_episode_num = parseInt(episode_num);
         play_song(current_show_num, current_episode_num, current_song_num);
         audio.pause();
-        audio.currentTime = parseInt(duration);
+        audio.currentTime = parseInt(elapsed_song_duration);
     }
     else{
         console.log("Did not find all cookies");
