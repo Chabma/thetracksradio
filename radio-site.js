@@ -3,7 +3,10 @@ current_show_num = 0;
 current_episode_num = 0;
 $(document).ready(function() 
  {
-     
+    $( "#logo" ).click(function(e) {
+        document.getElementById("episode_content").innerHTML = "";          
+     });
+    
      $( "#shows li" ).click(function(e) {
          str = ""+($(this).index() + 1)+"";
          get_content(str);
@@ -13,6 +16,11 @@ $(document).ready(function()
         //history.pushState(null, null,window.location.pathname + "#"+ e.target.getAttribute("id"));
                             
      });
+    
+    $( "#show1" ).click(function(e) {
+         get_home_content();           
+     });
+    
  
     $("#player").bind("ended", function(){
         play_song(current_show_num, current_episode_num, current_song_num+1);  
@@ -115,6 +123,25 @@ $(document).ready(function()
 function change_volume(vol){
     var audio = document.getElementById('player');
     audio.volume = vol/100;
+}
+
+function get_home_content() {
+    //console.log("show num: " + show_num);
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("episode_content").innerHTML = xmlhttp.responseText;
+            //console.log(xmlhttp.response);
+        }
+    };
+    xmlhttp.open("GET","./gethomecontent.php?",true);
+    xmlhttp.send();
 }
 
 function get_content(show_num) {
