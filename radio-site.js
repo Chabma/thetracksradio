@@ -127,7 +127,7 @@ $(document).ready(function()
         console.log("song_num = "+current_song_num);
         console.log("show_num = "+current_show_num);
         console.log("episode_num = "+current_episode_num);
-        console.log("duration = "+adio.currentTime);
+        console.log("duration = "+audio.currentTime);
         if(current_song_num != 0 && current_show_num != 0 && current_episode_num != 0){
             setCookies();
             console.log("attempted to set all cookies");
