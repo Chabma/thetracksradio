@@ -43,3 +43,12 @@ files:
     destination: /var/www/html
   - source: /index.html
     destination: /var/www/html/
+  - source: /vendor/
+    destination: /var/www/html/vendor
+  - source: /composer.json
+    destination: /var/www/html/
+  - source: /composer.lock
+    destination: /var/www/html/
+  - source: /composer.phar
+    destination: /var/www/html/vendor    
+    
