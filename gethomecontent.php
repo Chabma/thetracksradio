@@ -24,9 +24,9 @@
             echo('</h3><p>');
             echo($row['Description']);
             echo('<br>Duration: ');
-            echo(floor($row['Duration']/360));
+            echo(floor($row['Duration']/3600));
             echo(':');
-            echo(floor(($row['Duration']%360)/60));
+            echo(floor(($row['Duration']%3600)/60));
             echo(':');
             echo(floor($row['Duration'])%60);
             echo('</p></li>');
