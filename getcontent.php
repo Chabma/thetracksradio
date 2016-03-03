@@ -13,7 +13,8 @@
         $sql="SELECT * FROM Episodes WHERE Show_Id = '".$q."'";
         $result = mysqli_query($con,$sql);
         while($row = mysqli_fetch_array($result)) {
-            echo('<li onclick= "play_song(');
+            echo('<li onclick= "');
+            echo($row['Function'])
             echo($row['Show_Id']);
             echo(',');
             echo($row['Episode_Id']);
@@ -30,6 +31,9 @@
             echo(sprintf("%02d", floor(($row['Duration']%3600)/60)));
             echo(':');
             echo(sprintf("%02d", floor($row['Duration']%60)));
+            echo(', ');
+            echo(count(mysqli_fetch_array($result)));    
+            echo(' songs'); 
             echo('</p></li>');
         }
         mysqli_close($con);
