@@ -26,7 +26,7 @@
             echo($row['Title']);
             echo('</h3><p>');
             echo($row['Description']);
-            if($row['Function'] == 'play_song('){
+            if( $row['Function'] == 'play_song(' ) {
                 echo('<br>Duration: ');
                 echo(floor($row['Duration']/3600));
                 echo(':');
@@ -34,7 +34,7 @@
                 echo(':');
                 echo(sprintf("%02d", floor($row['Duration']%60)));
                 echo(', ');
-                echo($count));    
+                echo($count);    
                 echo(' songs'); 
             }
             echo('</p></li>');

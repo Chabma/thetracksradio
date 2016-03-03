@@ -33,7 +33,7 @@
                 echo(':');
                 echo(sprintf("%02d", floor($row['Duration']%60)));
                 echo(', ');
-                echo($count));    
+                echo($count);    
                 echo(' songs'); 
             }   
             echo('</p></li>');

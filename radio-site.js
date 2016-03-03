@@ -168,6 +168,10 @@ function get_content(show_num) {
     }
 }
 
+function open_doc(show_num, episode_num, arbitrary_num){
+    
+}
+
 function play_song(show_num, episode_num, song_num) {
     var audio = document.getElementById('player');
     var source = document.getElementById('mp3Source');
