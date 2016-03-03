@@ -114,7 +114,7 @@ $(document).ready(function()
     if (randomnumber == 17){
         $( "#logo h1" ).css("color","bisque");
     }
-    document.body.style.backgroundImage = "url('images/good-photos/"+randomnumber+".JPG')";
+    document.body.style.backgroundImage = "url('https://s3.amazonaws.com/thetracksradio-images/background_photos/"+randomnumber+".JPG')";
     
     
     //on webpage leave, sets cookies
