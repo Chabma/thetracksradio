@@ -41,7 +41,7 @@
             $sql="SELECT * FROM Songs WHERE Show_Id = '".$a."' AND Episode_Id = '".$b."' AND Song_Num = '".$c."'";
             $result = mysqli_query($con,$sql);
             while($row = mysqli_fetch_array($result)) {
-                echo(getTemporaryUrl("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX", "thetracksradio-mp3s", '/'+$row['Path'],100));
+                echo(getTemporaryUrl("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX", "thetracksradio-mp3s", $row['Path'],100));
             }
             mysqli_close($con);
         ?>
