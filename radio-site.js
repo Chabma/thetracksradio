@@ -120,19 +120,22 @@ $(document).ready(function()
         $( "#logo h1" ).css("color","bisque");
     }
     document.body.style.backgroundImage = "url('images/good-photos/"+randomnumber+".JPG')";
+    
+    
+    //on webpage leave, sets cookies
+    $( window ).unload(function() {
+        console.log("song_num = "+current_song_num);
+        console.log("show_num = "+current_show_num);
+        console.log("episode_num = "+current_episode_num);
+        console.log("duration = "+adio.currentTime);
+        if(current_song_num != 0 && current_show_num != 0 && current_episode_num != 0){
+            setCookies();
+            console.log("attempted to set all cookies");
+        }
+    });
+
 });
 
-//on webpage leave, sets cookies
-$( window ).unload(function() {
-    console.log("song_num = "+current_song_num);
-    console.log("show_num = "+current_show_num);
-    console.log("episode_num = "+current_episode_num);
-    console.log("duration = "+adio.currentTime);
-    if(current_song_num != 0 && current_show_num != 0 && current_episode_num != 0){
-        setCookies();
-        console.log("attempted to set all cookies");
-    }
-});
 
 function change_volume(vol){
     audio.volume = vol/100;
