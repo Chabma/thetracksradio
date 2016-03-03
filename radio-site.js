@@ -33,12 +33,11 @@ $(document).ready(function()
 
 
      $( "#play_pause" ).click(function(){
-        var music = document.getElementById('player');
-        if (music.paused) {
-		music.play();
+        if (audio.paused) {
+		audio.play();
 		$("#play_pause").attr('src', 'images/button-images/pause.png');
 	} else { 
-		music.pause();
+		audio.pause();
 		$("#play_pause").attr('src', 'images/button-images/play.png');
 	}
     });
@@ -242,14 +241,15 @@ function play_song(show_num, episode_num, song_num, _callback) {
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song
             $("#play_pause").attr('src', 'images/button-images/pause.png');
+            if(_callback){
+                _callback();
+            }
         }
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
     xmlhttp.send();
     
-    if(_callback){
-        _callback();
-    }
+    
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -292,7 +292,8 @@ function checkCookies() {
             console.log("playing!");
             seek(parseInt(elapsed_song_duration));
             console.log("attempted to change audio current time");
-            console.log(audio.currentTime);
+            console.log("inside cookie check"+audio.currentTime);
+            audio.pause();
         });
     }
     else{
