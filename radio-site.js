@@ -264,7 +264,6 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function setCookies(){
-    //Test commit message
     //console.log("song_num:"+ current_song_num);
     //console.log("show_num:"+ current_show_num);
     //console.log("episode_num;"+ current_episode_num);
