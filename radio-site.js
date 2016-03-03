@@ -105,7 +105,7 @@ $(document).ready(function()
     if (randomnumber == 2){
         $( "#logo h1" ).css("color","lightcoral");
     }
-    if (randomnumber == 3 ||randomnumber == 22){
+    if (randomnumber == 1 ||randomnumber == 3 ||randomnumber == 22){
         $( "#logo h1" ).css("color","white");
     }
     if (randomnumber == 5 || randomnumber == 7 || randomnumber == 8 || randomnumber == 9 || randomnumber == 12 || randomnumber == 13 || randomnumber == 14 || randomnumber == 16){
@@ -251,8 +251,6 @@ function play_song(show_num, episode_num, song_num, _callback) {
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
     xmlhttp.send();
-    
-    
 }
 
 function setCookie(cname, cvalue, exdays) {
