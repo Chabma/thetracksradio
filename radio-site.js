@@ -122,7 +122,11 @@ $(document).ready(function()
 });
 
 //on webpage leave, sets cookies
-$( window ).unload(setCookies());
+$( window ).unload(function() {
+    if(current_song_num != 0 && current_show_num != 0 && current_episode_num != 0){
+        setCookies();
+    }
+});
 
 function change_volume(vol){
     audio.volume = vol/100;
@@ -185,7 +189,7 @@ function open_doc(show_num, episode_num, arbitrary_num){
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
-            while (matches == regex.exec(response)) {
+            while (matches = regex.exec(response)) {
                 //console.log(matches[1]);
                 output.push(matches[1]);
             }
@@ -217,7 +221,7 @@ function play_song(show_num, episode_num, song_num) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
-            while (matches == regex.exec(response)) {
+            while (matches = regex.exec(response)) {
                 //console.log(matches[1]);
                 output.push(matches[1]);
             }
