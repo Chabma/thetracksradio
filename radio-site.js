@@ -124,8 +124,13 @@ $(document).ready(function()
 
 //on webpage leave, sets cookies
 $( window ).unload(function() {
+    console.log("song_num = "+current_song_num);
+    console.log("show_num = "+current_show_num);
+    console.log("episode_num = "+current_episode_num);
+    console.log("duration = "+adio.currentTime);
     if(current_song_num != 0 && current_show_num != 0 && current_episode_num != 0){
         setCookies();
+        console.log("attempted to set all cookies");
     }
 });
 
@@ -279,6 +284,9 @@ function checkCookies() {
         play_song(current_show_num, current_episode_num, current_song_num);
         audio.pause();
         audio.currentTime = parseInt(duration);
+    }
+    else{
+        console.log("Did not find all cookies");
     }
 }
                         
