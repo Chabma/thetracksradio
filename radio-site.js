@@ -202,7 +202,6 @@ function get_background(number) {
         // code for IE6, IE5
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.setRequestHeader("Referer", "http://thetracksradio.com/");
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
@@ -216,7 +215,7 @@ function get_background(number) {
         }
     };
     xmlhttp.open("GET","./getbackground.php?a="+number+",true");
-    xmlhttp.setRequestHeader("referer", "http://thetracksradio.com/");
+    xmlhttp.setRequestHeader("Referer", "http://thetracksradio.com/");
     xmlhttp.send();
 }
 
