@@ -316,6 +316,11 @@ function checkCookies() {
     var show_num=getCookie("show_num");
     var episode_num=getCookie("episode_num");
     var elapsed_song_duration=getCookie("elasped_song_duration");
+    console.log("got song_num:"+ song_num);
+    console.log("got show_num:"+ show_num);
+    console.log("got episode_num;"+ episode_num);
+    console.log("got elasped_song_duration:"+ elapsed_song_duration);
+    
     if (song_num!="" && show_num!="" && episode_num!="" && elapsed_song_duration!="") {
         //console.log("Found all cookies!");
         current_song_num = parseInt(song_num);
