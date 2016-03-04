@@ -5,10 +5,6 @@
     <body>
         <div class="results">
         <?php
-            require 'vendor/autoload.php';
-            use Aws\S3\S3Client;
-            use Aws\S3\Exception\S3Exception;
-            
             $a = intval($_GET['a']);
             $b = intval($_GET['b']);
             $c = intval($_GET['c']);    
@@ -18,52 +14,12 @@
                 die('Could not connect: ' . mysqli_error($con));
             }
             
-            function getTemporaryUrl($key, $secret, $bucket, $path, $expirySeconds = 30){
-                $expiry = time() + $expirySeconds;
-            
-                // Format the string to be signed
-                $string = sprintf("GET\n\n\n%s\n/%s/%s", $expiry, $bucket, $path);
-
-                // Generate an HMAC-SHA1 signature for it
-                $signature = base64_encode(hash_hmac('sha1', $string, $secret, true));
-
-                // Create the final URL
-                return sprintf(
-                "https://%s.s3.amazonaws.com/%s?%s",
-                $bucket,
-                $path,
-                http_build_query([
-                    'AWSAccessKeyId' => $key,
-                    'Expires' => $expiry,
-                    'Signature' => $signature
-                ])
-                );
-            }       
-            
-            
-
-            $request = $s3Client->createPresignedRequest($cmd, '+20 minutes');
             mysqli_select_db($con,"thetracksradio_database");
             //echo("SELECT * FROM Songs WHERE Show_Id = ".$a." AND Episode_Id = ".$b." AND Song_Num = ".$c."");
             $sql="SELECT * FROM Songs WHERE Show_Id = '".$a."' AND Episode_Id = '".$b."' AND Song_Num = '".$c."'";
             $result = mysqli_query($con,$sql);
             while($row = mysqli_fetch_array($result)) {
-                //echo(getTemporaryUrl("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX","thetracksradio-mp3s", $row['Path'],100));
-                
-                $s3Client = new Aws\S3\S3Client([
-                    'region'  => 'us-standard',
-                    'version' => '2016-02-26',
-                ]);
-                
-                $cmd = $s3Client->getCommand('GetObject', [
-                    'Bucket' => 'thetracksradio-mp3s',
-                    'Key'    => $row['Path'] 
-                ]); 
-                
-                $request = $s3Client->createPresignedRequest($cmd, '+2 minutes');
-                
-                $presignedUrl = (string) $request->getUri();
-                echo($url);
+               echo($row['Location']));
             }
             mysqli_close($con);
         ?>

@@ -116,7 +116,6 @@ $(document).ready(function()
     }
     document.body.style.backgroundImage = "url('https://s3.amazonaws.com/thetracksradio-images/background_photos/"+randomnumber+".JPG')";
     
-    
     //on webpage leave, sets cookies
     $(window).on('unload', function() {
         if(current_song_num != 0 && current_show_num != 0 && current_episode_num != 0){
@@ -190,7 +189,7 @@ function get_content(show_num) {
 function open_doc(show_num, episode_num, arbitrary_num){
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
-    var matches, output = [];
+    var doc_matches, doc_output = [];
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -201,14 +200,14 @@ function open_doc(show_num, episode_num, arbitrary_num){
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
-            while (matches = regex.exec(response)) {
-                //console.log(matches[1]);
-                output.push(matches[1]);
+            while (doc_matches = regex.exec(response)) {
+                //console.log(doc_matches[1]);
+                doc_output.push(doc_matches[1]);
             }
             //console.log("response: " + response);
-            //console.log(output)
+            //console.log(doc_output)
             $("#episode_content").html("");
-            $("#episode_content").load(output[0].trim());
+            $("#episode_content").load(doc_output[0].trim());
         }
     };
     xmlhttp.open("GET","./getdoc.php?a="+show_num+"&b="+episode_num+"&c="+arbitrary_num+"",true);
@@ -240,7 +239,9 @@ function play_song(show_num, episode_num, song_num, _callback) {
             //console.log("response: " + response);
             //console.log(output)
             $("#mp3Source").attr('src', output[0].trim());
-            $("#songTitle").text(output[1].trim());
+            if(output[1]){
+                $("#songTitle").text(output[1].trim());
+            }
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song
             $("#play_pause").attr('src', 'images/button-images/pause.png');
@@ -288,15 +289,21 @@ function checkCookies() {
     var show_num=getCookie("show_num");
     var episode_num=getCookie("episode_num");
     var elapsed_song_duration=getCookie("elasped_song_duration");
+    console.log("got song_num:"+ song_num);
+    console.log("got show_num:"+ show_num);
+    console.log("got episode_num;"+ episode_num);
+    console.log("got elasped_song_duration:"+ elapsed_song_duration);
+    
     if (song_num!="" && show_num!="" && episode_num!="" && elapsed_song_duration!="") {
         //console.log("Found all cookies!");
         current_song_num = parseInt(song_num);
         current_show_num = parseInt(show_num);
         current_episode_num = parseInt(episode_num);
         starting_elasped_song_duration = elapsed_song_duration;
-        play_song(current_show_num, current_episode_num, current_song_num, function(){
+        /*play_song(current_show_num, current_episode_num, current_song_num, function(){
             audio.pause();
-        });
+            $("#play_pause").attr('src', 'images/button-images/play.png');
+        });*/
     }
     else{
         //console.log("Did not find all cookies");
