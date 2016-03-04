@@ -165,7 +165,7 @@ function get_home_content() {
 
 function get_content(show_num) {
     var xmlhttp = null;
-    //console.log("get_content called");
+    console.log("get_content called");
     if (show_num == "") {
         $("#episode_content").html("");     
         return;
@@ -191,7 +191,7 @@ function get_content(show_num) {
 
 function get_background(number) {
     var xmlhttp = null;
-    //console.log("get_background called");
+    console.log("get_background called");
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
     var bg_matches, bg_output = [];
@@ -220,7 +220,7 @@ function get_background(number) {
 
 function open_doc(show_num, episode_num, arbitrary_num){
     var xmlhttp = null;
-    //console.log("open_doc called");
+    console.log("open_doc called");
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
     var doc_matches, doc_output = [];
@@ -250,7 +250,7 @@ function open_doc(show_num, episode_num, arbitrary_num){
 
 function play_song(show_num, episode_num, song_num, _callback) {
     var xmlhttp = null;
-    //console.log("play_song called")
+    console.log("play_song called")
     var source = document.getElementById('mp3Source');
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
@@ -277,6 +277,9 @@ function play_song(show_num, episode_num, song_num, _callback) {
             $("#mp3Source").attr('src', output[0].trim());
             if(output[1]){
                 $("#songTitle").text(output[1].trim());
+            }
+            for (var x in output){
+                console.log(output[x]);
             }
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song
@@ -325,10 +328,10 @@ function checkCookies() {
     var show_num=getCookie("show_num");
     var episode_num=getCookie("episode_num");
     var elapsed_song_duration=getCookie("elasped_song_duration");
-    //console.log("got song_num:"+ song_num);
-    //console.log("got show_num:"+ show_num);
-    //console.log("got episode_num;"+ episode_num);
-    //console.log("got elasped_song_duration:"+ elapsed_song_duration);
+    console.log("got song_num:"+ song_num);
+    console.log("got show_num:"+ show_num);
+    console.log("got episode_num;"+ episode_num);
+    console.log("got elasped_song_duration:"+ elapsed_song_duration);
     
     if (song_num!="" && show_num!="" && episode_num!="" && elapsed_song_duration!="") {
         //console.log("Found all cookies!");
