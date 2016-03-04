@@ -81,7 +81,7 @@
             $result = mysqli_query($con,$sql);
             while($row = mysqli_fetch_array($result)) {
                 //echo(getTemporaryUrl("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX","thetracksradio-mp3s", $row['Path'],100));
-                echo(el_s3_getTemporaryLink("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX", "thetracksradio-images", $row['Path'], .1));
+                echo(el_s3_getTemporaryLink("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX", "thetracksradio-images", $row['Path'], .05));
             }
             mysqli_close($con);
         ?>
