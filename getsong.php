@@ -5,10 +5,6 @@
     <body>
         <div class="results">
         <?php
-            require 'vendor/autoload.php';
-            use Aws\S3\S3Client;
-            use Aws\S3\Exception\S3Exception;
-            
             $a = intval($_GET['a']);
             $b = intval($_GET['b']);
             $c = intval($_GET['c']);    
@@ -18,6 +14,7 @@
                 die('Could not connect: ' . mysqli_error($con));
             }
             
+<<<<<<< HEAD
             if(!function_exists('el_crypto_hmacSHA1')){
                 /**
                 * Calculate the HMAC SHA1 hash of a string.
@@ -77,13 +74,19 @@
                 }
             }          
             
+=======
+>>>>>>> de88d6cf8ae6379b246f3cd9b9685dd5900e28ce
             mysqli_select_db($con,"thetracksradio_database");
             //echo("SELECT * FROM Songs WHERE Show_Id = ".$a." AND Episode_Id = ".$b." AND Song_Num = ".$c."");
             $sql="SELECT * FROM Songs WHERE Show_Id = '".$a."' AND Episode_Id = '".$b."' AND Song_Num = '".$c."'";
             $result = mysqli_query($con,$sql);
             while($row = mysqli_fetch_array($result)) {
+<<<<<<< HEAD
                 //echo(getTemporaryUrl("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX","thetracksradio-mp3s", $row['Path'],100));
                 echo(el_s3_getTemporaryLink("AKIAJPM5BXNE3ATMIBJQ", "clxpOdDJNOE7y+OxME4Mbx0Leex/aV0JtU+onfvX", "thetracksradio-mp3s", $row['Path'], 3));
+=======
+               echo($row['Location']));
+>>>>>>> de88d6cf8ae6379b246f3cd9b9685dd5900e28ce
             }
             mysqli_close($con);
         ?>
