@@ -202,7 +202,6 @@ function get_background(number) {
         // code for IE6, IE5
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.setRequestHeader("referer", "http://thetracksradio.com/");
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
@@ -216,6 +215,7 @@ function get_background(number) {
         }
     };
     xmlhttp.open("GET","./getbackground.php?a="+number+",true");
+    xmlhttp.setRequestHeader("referer", "http://thetracksradio.com/");
     xmlhttp.send();
 }
 
@@ -266,7 +266,6 @@ function play_song(show_num, episode_num, song_num, _callback) {
         // code for IE6, IE5
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.setRequestHeader("referer", "http://thetracksradio.com/");
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
@@ -289,6 +288,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
         }
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
+    xmlhttp.setRequestHeader("referer", "http://thetracksradio.com/");
     xmlhttp.send();
 }
 
