@@ -14,17 +14,17 @@ $(document).ready(function()
      });
     
      $( "#shows li" ).click(function(e) {
-         str = ""+($(this).index() + 1)+"";
-         get_content(str);
-         
+         if($(this).index() == 1){
+             get_home_content(); 
+         }
+         else{
+            str = ""+($(this).index() + 1)+"";
+            get_content(str);
+         }
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
         //history.pushState(null, null,window.location.pathname + "#"+ e.target.getAttribute("id"));
                             
-     });
-    
-    $( "#show1" ).click(function(e) {
-         get_home_content();           
      });
     
  
@@ -124,7 +124,6 @@ $(document).ready(function()
     });
 
 });
-
 
 function change_volume(vol){
     audio.volume = vol/100;
