@@ -266,7 +266,9 @@ function play_song(show_num, episode_num, song_num, _callback) {
             //console.log("response: " + response);
             //console.log(output)
             $("#mp3Source").attr('src', output[0].trim());
-            $("#songTitle").text(output[1].trim());
+            if(output[1]){
+                $("#songTitle").text(output[1].trim());
+            }
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song
             $("#play_pause").attr('src', 'images/button-images/pause.png');
