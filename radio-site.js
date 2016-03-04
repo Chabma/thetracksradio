@@ -209,7 +209,7 @@ function get_background(number) {
             document.body.style.backgroundImage = "url('"+output[0].trim()+"')";
         }
     };
-    xmlhttp.open("GET","./getbackground.php?a="+number+",true);
+    xmlhttp.open("GET","./getbackground.php?a="+number+",true");
     xmlhttp.send();
 }
 
