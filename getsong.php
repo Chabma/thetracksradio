@@ -54,7 +54,7 @@
     * @see http://awsdocs.s3.amazonaws.com/S3/20060301/s3-dg-20060301.pdf
     */
     
-    function el_s3_getTemporaryLink($accessKey, $secretKey, $bucket, $path, $expires = .1) {
+    function el_s3_getTemporaryLink($accessKey, $secretKey, $bucket, $path, $expires = 5) {
       // Calculate expiry time
       $expires = time() + intval(floatval($expires) * 60);
       // Fix the path; encode and sanitize
