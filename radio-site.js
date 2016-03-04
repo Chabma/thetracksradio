@@ -327,9 +327,10 @@ function checkCookies() {
         current_show_num = parseInt(show_num);
         current_episode_num = parseInt(episode_num);
         starting_elasped_song_duration = elapsed_song_duration;
-        play_song(current_show_num, current_episode_num, current_song_num, function(){
+        /*play_song(current_show_num, current_episode_num, current_song_num, function(){
             audio.pause();
-        });
+            $("#play_pause").attr('src', 'images/button-images/play.png');
+        });*/
     }
     else{
         //console.log("Did not find all cookies");
