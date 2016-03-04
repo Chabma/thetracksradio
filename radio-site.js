@@ -163,7 +163,6 @@ function get_home_content() {
 }
 
 function get_content(show_num) {
-    console.log("get_content called");
     if (show_num == "") {
         $("#episode_content").html("");     
         return;
@@ -188,7 +187,6 @@ function get_content(show_num) {
 }
 
 function get_background(number) {
-    console.log("get_background called");
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
     var bg_matches, bg_output = [];
@@ -216,7 +214,6 @@ function get_background(number) {
 }
 
 function open_doc(show_num, episode_num, arbitrary_num){
-    console.log("open_doc called");
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
     var doc_matches, doc_output = [];
@@ -245,7 +242,6 @@ function open_doc(show_num, episode_num, arbitrary_num){
 }
 
 function play_song(show_num, episode_num, song_num, _callback) {
-    console.log("play_song called")
     var source = document.getElementById('mp3Source');
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
