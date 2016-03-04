@@ -144,6 +144,7 @@ function seek(loc){
 }
 
 function get_home_content() {
+    var xmlhttp = null'';
     //console.log("show num: " + show_num);
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -163,6 +164,7 @@ function get_home_content() {
 }
 
 function get_content(show_num) {
+    var xmlhttp = null'';
     console.log("get_content called");
     if (show_num == "") {
         $("#episode_content").html("");     
@@ -188,6 +190,7 @@ function get_content(show_num) {
 }
 
 function get_background(number) {
+    var xmlhttp = null'';
     console.log("get_background called");
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
@@ -216,6 +219,7 @@ function get_background(number) {
 }
 
 function open_doc(show_num, episode_num, arbitrary_num){
+    var xmlhttp = null'';
     console.log("open_doc called");
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
@@ -245,6 +249,7 @@ function open_doc(show_num, episode_num, arbitrary_num){
 }
 
 function play_song(show_num, episode_num, song_num, _callback) {
+    var xmlhttp = null'';
     console.log("play_song called")
     var source = document.getElementById('mp3Source');
     var response = null;
@@ -273,7 +278,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
             if(output[1]){
                 $("#songTitle").text(output[1].trim());
             }
-            for (x in output){
+            for (var x in output){
                 console.log(output[x]);
             }
             audio.load(); //call this to just preload the audio without playing
