@@ -107,6 +107,8 @@
             while($row = mysqli_fetch_array($result)) {
                 echo($row['Title']);
             }
+            
+            
             mysqli_close($con);
         ?>
         </div>
