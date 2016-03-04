@@ -189,7 +189,7 @@ function get_content(show_num) {
 function get_background(number) {
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
-    var matches, output = [];
+    var bg_matches, bg_output = [];
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -200,13 +200,13 @@ function get_background(number) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
-            while (matches = regex.exec(response)) {
-                //console.log(matches[1]);
-                output.push(matches[1]);
+            while (bg_matches = regex.exec(response)) {
+                //console.log(bg_matches[1]);
+                bg_output.push(bg_matches[1]);
             }
             //console.log("response: " + response);
-            //console.log(output)
-            document.body.style.backgroundImage = "url('"+output[0].trim()+"')";
+            //console.log(bg_output)
+            document.body.style.backgroundImage = "url('"+bg_output[0].trim()+"')";
         }
     };
     xmlhttp.open("GET","./getbackground.php?a="+number+",true");
@@ -216,7 +216,7 @@ function get_background(number) {
 function open_doc(show_num, episode_num, arbitrary_num){
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
-    var matches, output = [];
+    var doc_matches, doc_output = [];
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -227,14 +227,14 @@ function open_doc(show_num, episode_num, arbitrary_num){
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
-            while (matches = regex.exec(response)) {
-                //console.log(matches[1]);
-                output.push(matches[1]);
+            while (doc_matches = regex.exec(response)) {
+                //console.log(doc_matches[1]);
+                doc_output.push(doc_matches[1]);
             }
             //console.log("response: " + response);
-            //console.log(output)
+            //console.log(doc_output)
             $("#episode_content").html("");
-            $("#episode_content").load(output[0].trim());
+            $("#episode_content").load(doc_output[0].trim());
         }
     };
     xmlhttp.open("GET","./getdoc.php?a="+show_num+"&b="+episode_num+"&c="+arbitrary_num+"",true);
