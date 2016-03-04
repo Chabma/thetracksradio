@@ -114,7 +114,7 @@ $(document).ready(function()
     if (randomnumber == 17){
         $( "#logo h1" ).css("color","bisque");
     }
-    document.body.style.backgroundImage = "url('https://s3.amazonaws.com/thetracksradio-images/background_photos/"+randomnumber+".JPG')";
+    get_background(randomnumber);
     
     //on webpage leave, sets cookies
     $(window).on('unload', function() {
@@ -215,7 +215,6 @@ function get_background(number) {
         }
     };
     xmlhttp.open("GET","./getbackground.php?a="+number+",true");
-    xmlhttp.setRequestHeader("referer", "http://thetracksradio.com/");
     xmlhttp.send();
 }
 
@@ -288,7 +287,6 @@ function play_song(show_num, episode_num, song_num, _callback) {
         }
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
-    xmlhttp.setRequestHeader("referer", "http://thetracksradio.com/");
     xmlhttp.send();
 }
 
