@@ -114,11 +114,7 @@ $(document).ready(function()
     if (randomnumber == 17){
         $( "#logo h1" ).css("color","bisque");
     }
-<<<<<<< HEAD
-    get_background(randomnumber);
-=======
     document.body.style.backgroundImage = "url('https://s3.amazonaws.com/thetracksradio-images/background_photos/"+randomnumber+".JPG')";
->>>>>>> de88d6cf8ae6379b246f3cd9b9685dd5900e28ce
     
     //on webpage leave, sets cookies
     $(window).on('unload', function() {
@@ -331,17 +327,11 @@ function checkCookies() {
     var show_num=getCookie("show_num");
     var episode_num=getCookie("episode_num");
     var elapsed_song_duration=getCookie("elasped_song_duration");
-<<<<<<< HEAD
+
     //console.log("got song_num:"+ song_num);
     //console.log("got show_num:"+ show_num);
     //console.log("got episode_num;"+ episode_num);
     //console.log("got elasped_song_duration:"+ elapsed_song_duration);
-=======
-    console.log("got song_num:"+ song_num);
-    console.log("got show_num:"+ show_num);
-    console.log("got episode_num;"+ episode_num);
-    console.log("got elasped_song_duration:"+ elapsed_song_duration);
->>>>>>> de88d6cf8ae6379b246f3cd9b9685dd5900e28ce
     
     if (song_num!="" && show_num!="" && episode_num!="" && elapsed_song_duration!="") {
         //console.log("Found all cookies!");
@@ -349,14 +339,10 @@ function checkCookies() {
         current_show_num = parseInt(show_num);
         current_episode_num = parseInt(episode_num);
         starting_elasped_song_duration = elapsed_song_duration;
-        /*play_song(current_show_num, current_episode_num, current_song_num, function(){
+        play_song(current_show_num, current_episode_num, current_song_num, function(){
             audio.pause();
             $("#play_pause").attr('src', 'images/button-images/play.png');
-<<<<<<< HEAD
         });
-=======
-        });*/
->>>>>>> de88d6cf8ae6379b246f3cd9b9685dd5900e28ce
     }
     else{
         //console.log("Did not find all cookies ");
