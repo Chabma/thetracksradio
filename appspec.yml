@@ -34,8 +34,6 @@ files:
   - source: /getsong.php
     destination: /var/www/html/
   - source: /getdoc.php
-    destination: /var/www/html/  
-  - source: /getbackground.php
     destination: /var/www/html/    
   - source: /radio-site.css
     destination: /var/www/html/
