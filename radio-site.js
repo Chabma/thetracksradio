@@ -345,7 +345,7 @@ function checkCookies() {
         });
     }
     else{
-        //console.log("Did not find all cookies");
+        //console.log("Did not find all cookies ");
     }
 }
                         
