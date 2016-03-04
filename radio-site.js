@@ -274,7 +274,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
                 $("#songTitle").text(output[1].trim());
             }
             for (x in output){
-                console.log(x);
+                console.log(output[x]);
             }
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song
