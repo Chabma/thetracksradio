@@ -114,8 +114,7 @@ $(document).ready(function()
     if (randomnumber == 17){
         $( "#logo h1" ).css("color","bisque");
     }
-    document.body.style.backgroundImage = "url('https://s3.amazonaws.com/thetracksradio-images/background_photos/"+randomnumber+".JPG')";
-    
+    get_background(randomnumber);
     
     //on webpage leave, sets cookies
     $(window).on('unload', function() {
@@ -185,6 +184,33 @@ function get_content(show_num) {
         xmlhttp.open("GET","./getcontent.php?q="+str,true);
         xmlhttp.send();
     }
+}
+
+function get_background(number) {
+    var response = null;
+    var regex = /<div class="results">([\s\S]*?)<\/div>/g;
+    var matches, output = [];
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            response = xmlhttp.responseText;
+            while (matches = regex.exec(response)) {
+                //console.log(matches[1]);
+                output.push(matches[1]);
+            }
+            //console.log("response: " + response);
+            //console.log(output)
+            document.body.style.backgroundImage = "url('"+output[0].trim()+"')";
+        }
+    };
+    xmlhttp.open("GET","./getbackground.php?a="+number+",true);
+    xmlhttp.send();
 }
 
 function open_doc(show_num, episode_num, arbitrary_num){
