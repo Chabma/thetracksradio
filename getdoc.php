@@ -8,7 +8,6 @@
         $a = intval($_GET['a']);
         $b = intval($_GET['b']);
         $c = intval($_GET['c']);
-        header('referer: http://thetracksradio.com/');    
 
         $con = mysqli_connect('eastone.c3y2bcgdn85r.us-east-1.rds.amazonaws.com','cam','fogter01','thetracksradio_database');
         if (!$con) {
