@@ -8,7 +8,6 @@
             require 'vendor/autoload.php';
             use Aws\S3\S3Client;
             use Aws\S3\Exception\S3Exception;
-            header('referer: http://thetracksradio.com/');
             
             $a = intval($_GET['a']);
             $b = intval($_GET['b']);
@@ -18,8 +17,6 @@
             if (!$con) {
                 die('Could not connect: ' . mysqli_error($con));
             }
-            
-            
             
             if(!function_exists('el_crypto_hmacSHA1')){
                 /**
