@@ -173,7 +173,14 @@ progress{
 }
 
 #album-tab{
-    vertical-align: top;
+    max-height: 200px;
+    max-width: 200px;
+    position: fixed;
+    margin-left: 6%;
+    bottom: 11%;
+    -webkit-box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
+    box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
+    background-color: rgba(255,255,255,1);
 }
 
 #album-image {
