@@ -173,10 +173,9 @@ progress{
 }
 
 #album-tab{
-    max-height: 200px;
-    max-width: 200px;
+    max-width: 150px;
     position: fixed;
-    margin-left: 6%;
+    margin-left: 7%;
     bottom: 11%;
     -webkit-box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
     box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
@@ -184,8 +183,8 @@ progress{
 }
 
 #album-image {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 150px;
+    max-width: 150px;
 }
 
 #album-title {
