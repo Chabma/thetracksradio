@@ -172,6 +172,22 @@ progress{
     vertical-align: middle;
 }
 
+#album-tab{
+    vertical-align: top;
+}
+
+#album-image {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+#album-title {
+    background-color: white;
+    font-size: 15px;
+    text-align: center;
+    margin: auto;
+}
+
 #songTitle{
     background-color: white;
     font-size: 15px;
