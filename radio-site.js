@@ -281,7 +281,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
                 $("#album-image").attr('src', output[2].trim());
             }
             if(output[3]){
-                $("#album-title").text(output[3].trim());
+                $("#songTitle").append(output[3].trim());
             }
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song

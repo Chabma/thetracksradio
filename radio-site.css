@@ -105,7 +105,7 @@ progress{
 }
 
 #buttons{
-    width: 15%;
+    width: 10%;
     height: 100%;
     margin: auto;
     display: inline-block;
@@ -173,18 +173,18 @@ progress{
 }
 
 #album-tab{
-    max-width: 150px;
-    position: fixed;
-    margin-left: 7%;
-    bottom: 11%;
+    max-height: 100%;
+    max-width: 5%;
+    bottom: 0%;
+    display: inline-block;
     -webkit-box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
     box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
     background-color: rgba(255,255,255,1);
 }
 
 #album-image {
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 90%;
+    max-width: 90%;
 }
 
 #album-title {
