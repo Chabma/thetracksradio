@@ -38,8 +38,6 @@ progress{
 #bottom{
     height: 11%;
     position: fixed;
-    padding-left: 8%;
-    padding-right: 2%;
     bottom: -0%;
     width: 100%;
     border-bottom: small solid black;
@@ -109,11 +107,12 @@ progress{
     height: 100%;
     margin: auto;
     display: inline-block;
-    margin-top: 1%;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 3%;
 }
 
 #middle-bottom{
-    height: 100%;
     display: inline-block;
     width: 50%;
     margin: auto;
@@ -127,7 +126,6 @@ progress{
     margin: 0 auto 0 auto;
     vertical-align: middle;
     text-align: center;
-    line-height: 100%;
 }
 
 
@@ -143,17 +141,16 @@ progress{
 
 #volume {
     display: inline-block;
-    height: 100%;
-    width: 15%;
+    width: 12%;
     margin: auto;
     vertical-align: middle;
+    text-align: center;
 }
 
 #buttons img{
-    margin: auto;
-    max-height: 60%;
     max-width: 27%;
     display: inline-block;
+    vertical-align: middle;
 }
 
 #audio_progress{
@@ -174,16 +171,12 @@ progress{
 
 #album-image {
     height: 100%;
+    max-width:5%;
     display: inline-block;
     -webkit-box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
     box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
-}
-
-#album-title {
-    background-color: white;
-    font-size: 15px;
-    text-align: center;
-    margin: auto;
+    margin-right: 2%;
+    vertical-align: middle;
 }
 
 #songTitle{
@@ -197,7 +190,7 @@ progress{
 
     display: inline-block;
     margin: auto;
-    max-height: 50%;
+    height: 50%;
     max-width: 25%;
     vertical-align: middle;
 }
