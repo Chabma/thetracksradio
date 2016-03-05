@@ -172,19 +172,11 @@ progress{
     vertical-align: middle;
 }
 
-#album-tab{
-    max-height: 100%;
-    max-width: 5%;
-    bottom: 0%;
+#album-image {
+    height: 100%;
     display: inline-block;
     -webkit-box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
     box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
-    background-color: rgba(255,255,255,1);
-}
-
-#album-image {
-    max-height: 90%;
-    max-width: 90%;
 }
 
 #album-title {
