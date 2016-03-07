@@ -171,7 +171,7 @@ progress{
 
 #album-image {
     height: 100%;
-    max-width:5%;
+    max-width: 8%;
     display: inline-block;
     -webkit-box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
     box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
