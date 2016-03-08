@@ -226,9 +226,9 @@ progress{
     float: left;
     vertical-align: middle;
     display: inline-block;
-    padding-left: 5%;
+    padding-left: 8%;
     height: 100%;
-    
+    width: 22%;  
 }
 
 .episodes-paragraph {
