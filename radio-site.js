@@ -275,7 +275,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
             //console.log(output)
             $("#mp3Source").attr('src', output[0].trim());
             if(output[1]){
-                $("#songTitle").text(output[1].trim());
+                $("#songTitle").text("<b>"+output[1].trim()+"</b>");
             }
             if(output[2]){
                 $("#album-image").attr('src', output[2].trim());
