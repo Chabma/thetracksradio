@@ -252,7 +252,7 @@ progress{
     border-top: medium solid rgba(0, 20, 260, 1); 
     border-bottom: medium solid rgba(0, 20, 260, 1); 
 }
-#overlay:hover { 
+#episodes li:hover img{ 
     border-top: medium solid rgba(0, 20, 260, 1); 
     border-bottom: medium solid rgba(0, 20, 260, 1);
     opacity: .5;
