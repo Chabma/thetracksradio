@@ -24,7 +24,7 @@ $(document).ready(function()
             get_content(str);
          }
          if($(this).index() == 2){
-             $("#show_description").html("<p>New Content Every Thursday</p>");
+             $("#show_description").html("</br><p>New Content Every Thursday</p>");
          }
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
