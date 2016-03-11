@@ -125,7 +125,7 @@ progress{
 
 #middle-bottom{
     display: inline-block;
-    width: 50%;
+    width: 47%;
     margin: auto;
     vertical-align: middle;
 }
@@ -160,6 +160,18 @@ progress{
 
 #buttons img{
     max-width: 27%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#buttons_2 {
+    max-width: 3%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#buttons_2 img{
+    width: 100%;
     display: inline-block;
     vertical-align: middle;
 }
