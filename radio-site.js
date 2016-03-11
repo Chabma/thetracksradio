@@ -87,20 +87,20 @@ $(document).ready(function()
     $( "#shuffle" ).click(function(){
         if (shuffle_bool) {
 		shuffle_bool = false;
-		$("#play_pause").attr('src', 'images/button-images/shuffle.png');
+		$("#shuffle").attr('src', 'images/button-images/shuffle.png');
 	} else { 
 		shuffle_bool = true;
-		$("#play_pause").attr('src', 'images/button-images/shuffle_on.png');
+		$("#shuffle").attr('src', 'images/button-images/shuffle_on.png');
 	}
     });
     
     $( "#backwards" ).click(function(){
         if (backwards_bool) {
 		backwards_bool = false;
-		$("#play_pause").attr('src', 'images/button-images/backwards.png');
+		$("#backwards").attr('src', 'images/button-images/play_backwards.png');
 	} else { 
 		backwards_bool = true;
-		$("#play_pause").attr('src', 'images/button-images/backwards_on.png');
+		$("#backwards").attr('src', 'images/button-images/play_backwards_on.png');
 	}
     });
      
