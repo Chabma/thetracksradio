@@ -180,11 +180,6 @@ progress{
 }
 
 #overlay {
-    height: 100%;
-    max-width: 8%;
-    display: inline-block;
-    margin-right: 2%;
-    vertical-align: middle;
 }
 
 #songTitle{
@@ -235,8 +230,9 @@ progress{
     vertical-align: middle;
     display: inline-block;
     padding-left: 8%;
-    height: 100%;
-    width: 22%;  
+    height: 200px;
+    width: 15.4%;
+    position: absolute;
 }
 
 .episodes-paragraph {
