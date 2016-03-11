@@ -26,6 +26,10 @@ img {
     height: auto;
 }
 
+h4 {
+    margin: 0;
+}
+
 progress{
 }
 
@@ -93,8 +97,7 @@ progress{
 }
 
 #show_description {
-    font-size: 20px;
-    font-size: 2vw;
+    font-size: 13px;
     font-kerning: normal;
     font-family: "Lobster";
     text-align: center;
