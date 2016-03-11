@@ -92,6 +92,10 @@ progress{
     color: #FFA500; 
 }
 
+#show_description {
+    text-align: center;
+}
+
 #content {
     -webkit-box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
     box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
@@ -253,5 +257,5 @@ progress{
     border-bottom: medium solid rgba(0, 20, 260, 1); 
 }
 #episodes li:hover .overlay{ 
-    opacity: .3;
+    opacity: .4;
 }

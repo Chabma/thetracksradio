@@ -15,6 +15,7 @@ $(document).ready(function()
      });
     
      $( "#shows li" ).click(function(e) {
+         $("#show_description").html("");
          if($(this).index() == 0){
              get_home_content(); 
          }

@@ -8,6 +8,8 @@
         if (!$con) {
             die('Could not connect: ' . mysqli_error($con));
         }
+        show_titles = ["","","Twix God","Cam's Jams","SoccerShow","John's Thing","Luke's Comic"];
+        
         mysqli_select_db($con,"thetracksradio_database");
         $sql="SELECT * FROM Episodes ORDER BY Release_Date DESC";
         $result = mysqli_query($con,$sql);  
@@ -17,7 +19,9 @@
             echo($row['Show_Id']);
             echo(',');
             echo($row['Episode_Id']);
-            echo(',1)">');
+            echo(',1)"><h4>');
+            echo(show_titles[$row['Show_Id']]);
+            echo(':</h4>');
             echo('<img src="');
             echo($row['IMG_Location']);
             echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h3>');
