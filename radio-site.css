@@ -180,7 +180,7 @@ progress{
 }
 
 #overlay {
-    opacity: .5;
+    opacity: 0;
 }
 
 #songTitle{
@@ -251,4 +251,9 @@ progress{
 #episodes li:hover { 
     border-top: medium solid rgba(0, 20, 260, 1); 
     border-bottom: medium solid rgba(0, 20, 260, 1); 
+}
+#overlay:hover { 
+    border-top: medium solid rgba(0, 20, 260, 1); 
+    border-bottom: medium solid rgba(0, 20, 260, 1);
+    opacity: .5;
 }
