@@ -10,7 +10,8 @@ $(document).ready(function()
     checkCookies();
     
     $( "#logo" ).click(function(e) {
-        $("#episode_content").html("");          
+        $("#episode_content").html("");
+        $("#show_description").html("");
      });
     
      $( "#shows li" ).click(function(e) {
@@ -20,6 +21,9 @@ $(document).ready(function()
          else{
             str = ""+($(this).index() + 1)+"";
             get_content(str);
+         }
+         if($(this).index() == 2){
+             $("#show_description").html("<p>New Content Every Thursday</p>");
          }
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
@@ -166,7 +170,8 @@ function get_content(show_num) {
     var xmlhttp = null;
     //console.log("get_content called");
     if (show_num == "") {
-        $("#episode_content").html("");     
+        $("#episode_content").html("");
+        $("#show_description").html("");
         return;
     } else { 
         //console.log("show num: " + show_num);
