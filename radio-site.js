@@ -2,6 +2,8 @@ current_song_num = 0;
 current_show_num = 0;
 current_episode_num = 0;
 starting_elasped_song_duration = 0;
+shuffle_bool = false;
+backwards_bool = false;
 audio = document.getElementById('player');
 $(document).ready(function() 
  {
@@ -34,7 +36,17 @@ $(document).ready(function()
     
  
     $("#player").bind("ended", function(){
-        play_song(current_show_num, current_episode_num, current_song_num+1);  
+        if(shuffle_bool){
+            play_song(current_show_num, current_episode_num, current_song_num+1); 
+        }
+        else{
+            if(backwards_bool){
+                play_song(current_show_num, current_episode_num, current_song_num-1); 
+            }
+            else{
+                play_song(current_show_num, current_episode_num, current_song_num+1); 
+            }
+        }
     });
 
 
@@ -70,6 +82,26 @@ $(document).ready(function()
             audio.pause();
             audio.currentTime = audio.duration;
         }
+    });
+    
+    $( "#shuffle" ).click(function(){
+        if (shuffle_bool) {
+		shuffle_bool = false;
+		$("#play_pause").attr('src', 'images/button-images/shuffle.png');
+	} else { 
+		shuffle_bool = true;
+		$("#play_pause").attr('src', 'images/button-images/shuffle_on.png');
+	}
+    });
+    
+    $( "#backwards" ).click(function(){
+        if (backwards_bool) {
+		backwards_bool = false;
+		$("#play_pause").attr('src', 'images/button-images/backwards.png');
+	} else { 
+		backwards_bool = true;
+		$("#play_pause").attr('src', 'images/button-images/backwards_on.png');
+	}
     });
      
      audio.onloadedmetadata = function(){ audio.currentTime = starting_elasped_song_duration;

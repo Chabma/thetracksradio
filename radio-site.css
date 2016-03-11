@@ -97,6 +97,7 @@ progress{
 }
 
 #show_description {
+    margin-top: 16px;
     font-size: 13px;
     font-kerning: normal;
     font-family: "Lobster";
@@ -171,7 +172,9 @@ progress{
 }
 
 #buttons_2 img{
-    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    height: 40%;
     display: inline-block;
     vertical-align: middle;
 }
