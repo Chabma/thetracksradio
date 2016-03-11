@@ -180,6 +180,7 @@ progress{
 }
 
 #overlay {
+    opacity: .5;
 }
 
 #songTitle{

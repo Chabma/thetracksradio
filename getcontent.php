@@ -21,7 +21,7 @@
             echo(',1)">');
             echo('<img src="');
             echo($row['IMG_Location']);
-            echo('"><img id="overlay" src="images/button-images/play.png"><div class="episodes-paragraph"><h3>');
+            echo('"><img id="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h3>');
             echo($row['Title']);
             echo('</h3><p>');
             echo($row['Description']);
