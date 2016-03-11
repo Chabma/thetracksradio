@@ -93,6 +93,10 @@ progress{
 }
 
 #show_description {
+    font-size: 20px;
+    font-size: 2vw;
+    font-kerning: normal;
+    font-family: "Lobster";
     text-align: center;
 }
 

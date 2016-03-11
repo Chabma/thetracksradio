@@ -19,12 +19,12 @@
             echo($row['Show_Id']);
             echo(',');
             echo($row['Episode_Id']);
-            echo(',1)"><h4>');
-            echo($show_titles[$row['Show_Id']]);
-            echo(':</h4>');
+            echo(',1)">');
             echo('<img src="');
             echo($row['IMG_Location']);
-            echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h3>');
+            echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h4>From ');
+            echo($show_titles[$row['Show_Id']]);
+            echo(':</h4><h3>');
             echo($row['Title']);
             echo('</h3><p>');
             echo($row['Description']);
