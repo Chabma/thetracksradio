@@ -179,6 +179,14 @@ progress{
     vertical-align: middle;
 }
 
+#overlay {
+    height: 100%;
+    max-width: 8%;
+    display: inline-block;
+    margin-right: 2%;
+    vertical-align: middle;
+}
+
 #songTitle{
     background-color: white;
     font-size: 15px;
