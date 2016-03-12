@@ -18,7 +18,7 @@
             echo($row['Show_Id']);
             echo(',');
             echo($row['Episode_Id']);
-            echo(',1)');
+            echo(',1); ');
             echo('get_count(');
             echo($row['Show_Id']);
             echo(',');
