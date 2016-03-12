@@ -18,7 +18,12 @@
             echo($row['Show_Id']);
             echo(',');
             echo($row['Episode_Id']);
-            echo(',1)">');
+            echo(',1)');
+            echo('get_count(');
+            echo($row['Show_Id']);
+            echo(',');
+            echo($row['Episode_Id']);
+            echo(')">');
             echo('<img src="');
             echo($row['IMG_Location']);
             echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h3>');

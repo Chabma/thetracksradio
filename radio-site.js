@@ -2,6 +2,7 @@ current_song_num = 0;
 current_show_num = 0;
 current_episode_num = 0;
 starting_elasped_song_duration = 0;
+playlist_count = 0;
 shuffle_bool = false;
 backwards_bool = false;
 audio = document.getElementById('player');
@@ -330,6 +331,28 @@ function play_song(show_num, episode_num, song_num, _callback) {
         }
     };
     xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
+    xmlhttp.send();
+}
+
+function get_count(show_num, episode_num) {
+    var xmlhttp = null;
+    //console.log("play_song called")
+    var response = null;
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            response = xmlhttp.responseText;
+            playlist_count = parseInt(response);
+        }
+        console.log(playlist_count);
+    };
+    xmlhttp.open("GET","./getcount.php?a="+show_num+"&b="+episode_num+"",true);
     xmlhttp.send();
 }
 
