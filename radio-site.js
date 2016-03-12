@@ -348,6 +348,7 @@ function get_count(show_num, episode_num) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText;
+            console.log("response: "+response);
             playlist_count = parseInt(response);
         }
         console.log(playlist_count);
