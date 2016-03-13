@@ -347,9 +347,16 @@ function get_count(show_num, episode_num) {
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            response = xmlhttp.responseText;
-            console.log("response: "+response);
-            playlist_count = parseInt(response);
+            response = xmlhttp.responseText; 
+            while (matches = regex.exec(response)) {
+                //console.log(matches[1]);
+                output.push(matches[1]);
+            }
+            if(output[1]){
+                console.log("response: "+output[1].trim());
+                playlist_count = parseInt(output[1].trim());
+            }
+            
         }
         console.log(playlist_count);
     };
