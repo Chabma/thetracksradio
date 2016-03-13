@@ -339,6 +339,7 @@ function get_count(show_num, episode_num) {
     //console.log("play_song called")
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
+    var matches, output = [];
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
