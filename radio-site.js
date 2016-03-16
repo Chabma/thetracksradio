@@ -113,7 +113,7 @@ $(document).ready(function()
         if (shuffle_bool) {
 		      shuffle_bool = false;
             if(backwards_bool){
-            first_song = playlist_count;
+            first_song = playlist_count - 1;
             }
             else{
                 first_song = 1;
@@ -130,7 +130,7 @@ $(document).ready(function()
         if (backwards_bool) {
 		backwards_bool = false;
         if(shuffle_bool){
-            first_song = Math.random() * (playlist_count - 0) + 0
+            first_song = Math.random() * (playlist_count - 1) + 0
         }
         else{
             first_song = 1; 
@@ -408,10 +408,10 @@ function get_count(show_num, episode_num) {
             
             console.log("playlist_count: "+playlist_count);
             if( shuffle_bool){
-               first_song = Math.random() * (playlist_count - 0) + 0; 
+               first_song = Math.random() * (playlist_count - 1) + 0; 
             }
             else if(backwards_bool){
-                first_song = playlist_count;
+                first_song = playlist_count - 1;
             }
             else{
                 first_song = 1;
