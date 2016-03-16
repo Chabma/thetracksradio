@@ -215,7 +215,7 @@ function seek(loc){
 }
 
 function get_about_content() {
-    $("#episode_content").html("<div><h3>About</h3></div>");
+    $("#episode_content").html("<div><h3>About</h3><p>email: thetracksradio@gmail.com</p></br><h3>New Content</h3><p>Twix God: Every Monday</p></br><p>Jams: Every Thursday (afternoon)</p></div>");
 }
 
 function get_home_content() {
