@@ -262,7 +262,7 @@ progress{
     display: inline-block;
     height: 100px;
     width: 100px;
-    padding-left: 10%;
+    padding-left: 5%;
     position: absolute;
 }
 
@@ -278,7 +278,12 @@ progress{
     font-family: "Pacifico","Lobster";
     font-size: 12px;
 }
+
 .episodes-paragraph p{
+    margin: 0;
+}
+
+.episodes-paragraph h6{
     margin: 0;
 }
 
