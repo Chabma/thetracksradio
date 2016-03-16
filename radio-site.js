@@ -353,16 +353,12 @@ function get_count(show_num, episode_num) {
             while (matches = regex.exec(response)) {
                 console.log("matches[0]: "+matches[0]);
                 console.log("matches[1]: "+matches[1]);
-                output.push(matches[1]);
+                output.push(matches[0]);
             }
             if(output[0]){
                 console.log("response: "+output[0].trim());
                 playlist_count = parseInt(output[0].trim());
                 console.log("output[0]: "+output[0]);
-            }
-            if(output[1]){
-                console.log(playlist_count);
-                console.log("output[1]: "+output[1]);
             }
             
         }  

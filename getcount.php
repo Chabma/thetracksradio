@@ -14,7 +14,7 @@
             }
             mysqli_select_db($con,"thetracksradio_database");
             //echo("SELECT * FROM Songs WHERE Show_Id = ".$a." AND Episode_Id = ".$b." AND Song_Num = ".$c."");
-            $sql="SELECT * FROM Songs WHERE Show_Id = '".$a."' AND Episode_Id = '".$b."'";
+            $sql="SELECT * FROM Episodes WHERE Show_Id = '".$a."' AND Episode_Id = '".$b."'";
             $result = mysqli_query($con,$sql);
             while($row = mysqli_fetch_array($result)) {
                 echo("");
