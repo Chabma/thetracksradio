@@ -16,7 +16,9 @@
             $sql="SELECT * FROM Songs WHERE Show_Id = '".$a."' AND Episode_Id = '".$b."'";
             $result = mysqli_query($con,$sql);
             while($row = mysqli_fetch_array($result)) {
+                echo("");
                 echo($row['Song_Count']);
+                echo("");
             }
             mysqli_close($con);
         ?>

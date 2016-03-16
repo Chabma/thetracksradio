@@ -354,13 +354,13 @@ function get_count(show_num, episode_num) {
                 //console.log(matches[1]);
                 output.push(matches[1]);
             }
-            if(output[1]){
-                console.log("response: "+output[1].trim());
-                playlist_count = parseInt(output[1].trim());
+            if(output[0]){
+                console.log("response: "+output[0].trim());
+                playlist_count = parseInt(output[0].trim());
+                console.log(playlist_count);
             }
             
-        }
-        console.log(playlist_count);
+        }  
     };
     xmlhttp.open("GET","./getcount.php?a="+show_num+"&b="+episode_num+"",true);
     xmlhttp.send();
