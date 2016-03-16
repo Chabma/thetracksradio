@@ -3,6 +3,7 @@ current_show_num = 0;
 current_episode_num = 0;
 starting_elasped_song_duration = 0;
 playlist_count = 0;
+first_song = 1;
 shuffle_bool = false;
 backwards_bool = false;
 audio = document.getElementById('player');
@@ -70,14 +71,30 @@ $(document).ready(function()
                 audio.pause();
                 audio.currentTime = 0;
             }else{
-                play_song(current_show_num, current_episode_num, current_song_num - 1);
+                if (shuffle_bool){
+                 play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0);
+                }
+                if (backwards_bool){
+                    play_song(current_show_num, current_episode_num, current_song_num + 1);
+                }
+                else{
+                    play_song(current_show_num, current_episode_num, current_song_num - 1);
+                }
             }
         }
     });
      
      $( "#next" ).click(function(){
          try{
-            play_song(current_show_num, current_episode_num, current_song_num + 1);
+             if (shuffle_bool){
+                 play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0);
+             }
+             if (backwards_bool){
+                 play_song(current_show_num, current_episode_num, current_song_num - 1);
+             }
+             else{
+                play_song(current_show_num, current_episode_num, current_song_num + 1);
+             }
         }
         catch(err){
             audio.pause();
@@ -88,9 +105,16 @@ $(document).ready(function()
     $( "#shuffle" ).click(function(){
         if (shuffle_bool) {
 		shuffle_bool = false;
+        if(backwards_bool){
+            first_song = playlist_count;
+        }
+        else{
+            first_song = 1;
+        }
 		$("#shuffle").attr('src', 'images/button-images/shuffle.png');
 	} else { 
 		shuffle_bool = true;
+        first_song = Math.random() * (playlist_count - 0) + 0
 		$("#shuffle").attr('src', 'images/button-images/shuffle_on.png');
 	}
     });
@@ -98,9 +122,16 @@ $(document).ready(function()
     $( "#backwards" ).click(function(){
         if (backwards_bool) {
 		backwards_bool = false;
+        if(shuffle_bool){
+            first_song = Math.random() * (playlist_count - 0) + 0
+        }
+        else{
+            first_song = 1; 
+        }
 		$("#backwards").attr('src', 'images/button-images/play_backwards.png');
 	} else { 
 		backwards_bool = true;
+        first_song = playlist_count;
 		$("#backwards").attr('src', 'images/button-images/play_backwards_on.png');
 	}
     });
@@ -361,7 +392,15 @@ function get_count(show_num, episode_num) {
             }
             
             console.log("playlist_count: "+playlist_count);
-            
+            if(backwards_bool){
+                first_song = playlist_count;
+            }
+            else if( shuffle_bool){
+               first_song = Math.random() * (playlist_count - 0) + 0; 
+            }
+            else{
+                first_song = 1;
+            }
         }  
     };
     xmlhttp.open("GET","./getcount.php?a="+show_num+"&b="+episode_num+"",true);
