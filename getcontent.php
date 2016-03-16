@@ -23,7 +23,12 @@
             echo($row['Show_Id']);
             echo(',');
             echo($row['Episode_Id']);
-            echo(',first_song');
+            echo(',');
+            echo('get_count(');
+            echo($row['Show_Id']);
+            echo(',');
+            echo($row['Episode_Id']);
+            echo(') ');
             echo(')">');
             echo('<img src="');
             echo($row['IMG_Location']);
