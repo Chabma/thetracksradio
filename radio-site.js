@@ -19,7 +19,7 @@ $(document).ready(function()
      });
     
      $( "#shows li" ).click(function(e) {
-         $("#show_description").html("");
+         
          if($(this).index() == 0){
              get_home_content(); 
          }
@@ -238,6 +238,7 @@ function get_home_content() {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             $("#episode_content").html(xmlhttp.responseText);
+            $("#show_description").html("");
             //console.log(xmlhttp.response);
         }
     };
