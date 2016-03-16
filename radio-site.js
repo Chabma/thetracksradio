@@ -33,9 +33,8 @@ $(document).ready(function()
          if($(this).index() == 2){
              $("#show_description").html("<p>New Content Every Thursday</p>");
          }
-         if($(this).index() == 4){
+         if($(this).index() == 3){
              get_about_content();
-             $("#show_description").html("<p>New Content Every Thursday</p>");
          }
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
