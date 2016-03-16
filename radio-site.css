@@ -282,10 +282,12 @@ progress{
 
 .episodes-paragraph p{
     margin: 0;
+    display: inline-block;
 }
 
 .episodes-paragraph h4{
     margin: 0;
+    display: inline-block;
 }
 
 #episodes li:hover { 
