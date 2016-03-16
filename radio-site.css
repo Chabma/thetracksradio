@@ -261,7 +261,8 @@ progress{
     vertical-align: middle;
     display: inline-block;
     height: 100px;
-    width: 100px;;
+    width: 100px;
+    padding-left: 10%;
     position: absolute;
 }
 
