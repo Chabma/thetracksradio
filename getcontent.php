@@ -27,12 +27,12 @@
             echo(')">');
             echo('<img src="');
             echo($row['IMG_Location']);
-            echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h3>');
+            echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h4>');
             echo($row['Title']);
-            echo('</h3><p>');
+            echo('</h4><p>');
             echo($row['Description']);
             if( $row['Function'] == 'play_song(' ) {
-                echo('<br>Duration: ');
+                echo('Duration: ');
                 echo(floor($row['Duration']/3600));
                 echo(':');
                 echo(sprintf("%02d", floor(($row['Duration']%3600)/60)));

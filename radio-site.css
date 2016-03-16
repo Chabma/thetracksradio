@@ -270,7 +270,7 @@ progress{
     vertical-align: middle;
     display: inline-block;
     width: 50%;
-    max-height: 100px;
+    max-height: 70px;
     overflow: auto;
     font-family: "Pacifico","Lobster";
 }
