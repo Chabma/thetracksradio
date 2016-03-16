@@ -248,7 +248,7 @@ progress{
     margin-bottom: 5px;
     padding: 0px 25px 0px 25px;
     vertical-align: top;
-    height: 100px;
+    height: 60px;
     width: 90%;
     display:block;
     border-top: medium solid rgba(0, 20, 260, 0); 
@@ -268,9 +268,8 @@ progress{
 }
 
 .episodes-paragraph {
-    margin: 2 10% 2 2;
-    padding: 0 10 0 0;
-    float: right;
+    margin: 2 2 2 2;
+    padding: 0 0 0 7%;
     vertical-align: middle;
     display: inline-block;
     max-height: 60px;

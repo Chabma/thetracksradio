@@ -32,7 +32,7 @@
             echo('</h4></br><p>');
             echo($row['Description']);
             if( $row['Function'] == 'play_song(' ) {
-                echo('         Duration: ');
+                echo('</br>Duration: ');
                 echo(floor($row['Duration']/3600));
                 echo(':');
                 echo(sprintf("%02d", floor(($row['Duration']%3600)/60)));
