@@ -29,7 +29,7 @@
             echo('</h4><p>');
             echo($row['Description']);
             if($row['Function'] == 'play_song('){
-                echo('<br>Duration: ');
+                echo('  Duration: ');
                 echo(floor($row['Duration']/3600));
                 echo(':');
                 echo(sprintf("%02d", floor(($row['Duration']%3600)/60)));
