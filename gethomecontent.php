@@ -22,11 +22,11 @@
             echo(',1)">');
             echo('<img src="');
             echo($row['IMG_Location']);
-            echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h4>From ');
+            echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h6>From ');
             echo($show_titles[$row['Show_Id']]);
-            echo(':</h4><h3>');
+            echo(':</h6><h4>');
             echo($row['Title']);
-            echo('</h3><p>');
+            echo('</h4><p>');
             echo($row['Description']);
             if($row['Function'] == 'play_song('){
                 echo('<br>Duration: ');
