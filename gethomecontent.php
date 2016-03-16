@@ -22,9 +22,9 @@
             echo(',1)">');
             echo('<img src="');
             echo($row['IMG_Location']);
-            echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h6>From ');
+            echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h5>From ');
             echo($show_titles[$row['Show_Id']]);
-            echo(':</h6><h4>');
+            echo(':</h5><h4>');
             echo($row['Title']);
             echo('</h4><p>');
             echo($row['Description']);
