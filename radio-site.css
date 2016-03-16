@@ -260,6 +260,7 @@ progress{
 #episodes li img{
     float: left;
     vertical-align: middle;
+    padding: 3 0 3 27%;
     display: inline-block;
     height: 100px;
     width: 100px;
