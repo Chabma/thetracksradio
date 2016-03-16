@@ -23,6 +23,9 @@ $(document).ready(function()
          if($(this).index() == 0){
              get_home_content(); 
          }
+         else if($(this).index() == 3){
+             get_about_content();
+         }
          else{
             str = ""+($(this).index() + 1)+"";
             get_content(str);
@@ -33,9 +36,7 @@ $(document).ready(function()
          if($(this).index() == 2){
              $("#show_description").html("<p>New Content Every Thursday</p>");
          }
-         if($(this).index() == 3){
-             get_about_content();
-         }
+         
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
         //history.pushState(null, null,window.location.pathname + "#"+ e.target.getAttribute("id"));
