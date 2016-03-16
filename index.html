@@ -45,9 +45,9 @@
 
         <div id="bottom">
             <div id="buttons">
-                <img id="previous" src="images/button-images/previous.png">
-                <img id="play_pause" src="images/button-images/play.png">
-                <img id="next" src="images/button-images/next.png">
+                <img id="previous" src="images/button-images/previous.png" title="previous">
+                <img id="play_pause" src="images/button-images/play.png" title="play/pause">
+                <img id="next" src="images/button-images/next.png" title="next">
             </div>
             <img id="album-image" src="">
             
@@ -61,10 +61,10 @@
             </div>    
             <div id="time"><p id="current_minutes">88</p><p>:</p><p id="current_seconds">88</p><p>  /  </p><p id="max_minutes">88</p><p>:</p><p id="max_seconds">88</p></div>
             <div id="buttons_2">
-                 <img id="shuffle" src="images/button-images/shuffle.png">
-                <img id="backwards" src="images/button-images/play_backwards.png">
+                 <img id="shuffle" src="images/button-images/shuffle.png" title="shuffle order">
+                <img id="backwards" src="images/button-images/play_backwards.png" title="reverse order">
             </div>
-            <div id="volume">
+            <div id="volume" title="volume">
                     <img src="images/button-images/volume.png" display="inline-block">
                     <input type="range" id="volume_progress" value="0" max="100" oninput="change_volume(this.value)" onchange="change_volume(this.value)" display="inline-block">
             </div>    
