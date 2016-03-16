@@ -244,11 +244,14 @@ progress{
 #episodes li{
     margin-top: 5px;
     margin-bottom: 5px;
-    padding: 20px 0 20px 25px;
+    padding: 20px 5px 20px 25px;
     vertical-align: top;
     height: 100px;
-    width: 100%;
+    width: 90%;
+    
     display:block;
+    border-top: medium solid rgba(0, 20, 260, 0); 
+    border-bottom: medium solid rgba(0, 20, 260, 0); 
     border-top: medium solid rgba(0, 20, 260, 0); 
     border-bottom: medium solid rgba(0, 20, 260, 0); 
     
