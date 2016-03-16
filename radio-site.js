@@ -351,15 +351,18 @@ function get_count(show_num, episode_num) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             response = xmlhttp.responseText; 
             while (matches = regex.exec(response)) {
-                //console.log(matches[1]);
+                console.log(matches[1]);
                 output.push(matches[1]);
             }
             if(output[0]){
                 console.log("response: "+output[0].trim());
                 playlist_count = parseInt(output[0].trim());
+                console.log("output[0]: "+output[0]);
+            }
+            if(output[1]){
                 console.log(playlist_count);
             }
-            
+            console.log("output[1]: "+output[1]);
         }  
     };
     xmlhttp.open("GET","./getcount.php?a="+show_num+"&b="+episode_num+"",true);
