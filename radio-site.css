@@ -264,8 +264,8 @@ progress{
 }
 
 .episodes-paragraph {
-    margin: 0 10% 0 0;
-    padding: 2 10 2 2;
+    margin: 2 10% 2 2;
+    padding: 0 10 0 0;
     float: right;
     vertical-align: middle;
     display: inline-block;
@@ -278,7 +278,10 @@ progress{
 
 #episodes li:hover { 
     border-top: medium solid rgba(0, 20, 260, 1); 
-    border-bottom: medium solid rgba(0, 20, 260, 1); 
+    border-bottom: medium solid rgba(0, 20, 260, 1);
+    border-right: medium solid rgba(0, 20, 260, 1);
+    border-left: medium solid rgba(0, 20, 260, 1);
+    border-radius: 3px;
 }
 #episodes li:hover .overlay{ 
     opacity: .4;
