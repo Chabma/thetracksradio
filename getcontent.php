@@ -29,7 +29,7 @@
             echo($row['IMG_Location']);
             echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h4>');
             echo($row['Title']);
-            echo('</h4><p>');
+            echo('</h4></br><p>');
             echo($row['Description']);
             if( $row['Function'] == 'play_song(' ) {
                 echo('         Duration: ');
