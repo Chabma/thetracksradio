@@ -362,8 +362,9 @@ function get_count(show_num, episode_num) {
             }
             if(output[1]){
                 console.log(playlist_count);
+                console.log("output[1]: "+output[1]);
             }
-            console.log("output[1]: "+output[1]);
+            
         }  
     };
     xmlhttp.open("GET","./getcount.php?a="+show_num+"&b="+episode_num+"",true);

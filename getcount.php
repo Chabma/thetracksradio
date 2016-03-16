@@ -2,7 +2,8 @@
 <html>
     <head>
     </head>
-    <body>    
+    <body>   
+        <div class="results">
         <?php
             $a = intval($_GET['a']);
             $b = intval($_GET['b']);
@@ -22,5 +23,6 @@
             }
             mysqli_close($con);
         ?>
+        </div>
     </body>
 </html>
