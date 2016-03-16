@@ -269,11 +269,14 @@ progress{
     float: right;
     vertical-align: middle;
     display: inline-block;
-    width: 70%;
+    width: 60%;
     max-height: 70px;
     overflow: auto;
     font-family: "Pacifico","Lobster";
-    font-size: 10px;
+    font-size: 12px;
+}
+.episodes-paragraph p{
+    margin: 0;
 }
 
 #episodes li:hover { 
