@@ -248,7 +248,7 @@ progress{
     margin-bottom: 5px;
     padding: 0px 25px 0px 25px;
     vertical-align: top;
-    height: 80px;
+    height: 100px;
     width: 90%;
     display:block;
     border-top: medium solid rgba(0, 20, 260, 0); 
@@ -261,8 +261,8 @@ progress{
     float: left;
     vertical-align: middle;
     display: inline-block;
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
     padding-left: 5%;
     position: absolute;
 }
@@ -272,7 +272,7 @@ progress{
     padding: 0 0 0 27%;
     vertical-align: middle;
     display: inline-block;
-    max-height: 80px;
+    max-height: 100px;
     overflow: auto;
     font-family: "Pacifico","Lobster";
     font-size: 14px;
