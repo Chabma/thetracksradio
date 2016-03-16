@@ -74,7 +74,7 @@ $(document).ready(function()
                 if (shuffle_bool){
                  play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0);
                 }
-                if (backwards_bool){
+                else if (backwards_bool){
                     play_song(current_show_num, current_episode_num, current_song_num + 1);
                 }
                 else{
@@ -89,7 +89,7 @@ $(document).ready(function()
              if (shuffle_bool){
                  play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0);
              }
-             if (backwards_bool){
+             else if (backwards_bool){
                  play_song(current_show_num, current_episode_num, current_song_num - 1);
              }
              else{
@@ -104,13 +104,13 @@ $(document).ready(function()
     
     $( "#shuffle" ).click(function(){
         if (shuffle_bool) {
-		shuffle_bool = false;
-        if(backwards_bool){
+		      shuffle_bool = false;
+            if(backwards_bool){
             first_song = playlist_count;
-        }
-        else{
-            first_song = 1;
-        }
+            }
+            else{
+                first_song = 1;
+            }
 		$("#shuffle").attr('src', 'images/button-images/shuffle.png');
 	} else { 
 		shuffle_bool = true;
@@ -392,11 +392,11 @@ function get_count(show_num, episode_num) {
             }
             
             console.log("playlist_count: "+playlist_count);
-            if(backwards_bool){
-                first_song = playlist_count;
-            }
-            else if( shuffle_bool){
+            if( shuffle_bool){
                first_song = Math.random() * (playlist_count - 0) + 0; 
+            }
+            else if(backwards_bool){
+                first_song = playlist_count;
             }
             else{
                 first_song = 1;
