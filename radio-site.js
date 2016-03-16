@@ -35,6 +35,7 @@ $(document).ready(function()
          }
          if($(this).index() == 4){
              get_about_content();
+             $("#show_description").html("<p>New Content Every Thursday</p>");
          }
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
@@ -218,8 +219,9 @@ function seek(loc){
 }
 
 function get_about_content() {
-    $("#episodes").html("");
-    $("#show_description").html("<h3>About</h3><p>email: thetracksradio@gmail.com</p></br><h3>New Content</h3><p>Twix God: Every Monday</p></br><p>Jams: Every Thursday (afternoon)</p>");
+    console.log('about_content');
+    $("#episode").html("");
+    $("#show_description").html("<h3>About</h3><p>email: thetracksradio@gmail.com</p></br><h3>New Content</h3><p>Twix God: Every Monday</p></br><p>Jams: Every Thursday (afternoon)</p></br>");
 }
 
 function get_home_content() {
