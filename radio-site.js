@@ -30,6 +30,9 @@ $(document).ready(function()
          if($(this).index() == 2){
              $("#show_description").html("<p>New Content Every Thursday</p>");
          }
+         if($(this).index() == 4){
+             get_about_content();
+         }
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
         //history.pushState(null, null,window.location.pathname + "#"+ e.target.getAttribute("id"));
@@ -209,6 +212,10 @@ function seek(loc){
         //console.log("seeked to "+ loc +" now at "+ audio.currentTime);
         audio.play();
     }
+}
+
+function get_about_content() {
+    $("#episode_content").html("<div><h3>About</h3></div>");
 }
 
 function get_home_content() {
