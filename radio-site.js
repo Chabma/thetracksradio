@@ -38,7 +38,7 @@ $(document).ready(function()
  
     $("#player").bind("ended", function(){
         if(shuffle_bool){
-            play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0;); 
+            play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0); 
         }
         else{
             if(backwards_bool){
