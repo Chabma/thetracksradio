@@ -273,10 +273,10 @@ progress{
     vertical-align: middle;
     display: inline-block;
     width: 60%;
-    max-height: 90px;
+    max-height: 100px;
     overflow: auto;
     font-family: "Pacifico","Lobster";
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .episodes-paragraph p{
