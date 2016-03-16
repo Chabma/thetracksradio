@@ -38,7 +38,7 @@ $(document).ready(function()
  
     $("#player").bind("ended", function(){
         if(shuffle_bool){
-            play_song(current_show_num, current_episode_num, current_song_num+1); 
+            play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0;); 
         }
         else{
             if(backwards_bool){
@@ -356,9 +356,8 @@ function get_count(show_num, episode_num) {
                 output.push(matches[1]);
             }
             if(output[0]){
-                console.log("response: "+output[0].trim());
+                //console.log("response: "+output[0].trim());
                 playlist_count = parseInt(output[0].trim());
-                console.log("output[0]: "+output[0]);
             }
             
             console.log("playlist_count: "+playlist_count);
