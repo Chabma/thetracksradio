@@ -336,7 +336,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
     var xmlhttp = null;
     //console.log("play_song called")
     var source = document.getElementById('mp3Source');
-    var response = null;
+    var song_response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
     var matches, song_output = [];
     current_show_num = show_num;
@@ -351,13 +351,13 @@ function play_song(show_num, episode_num, song_num, _callback) {
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            response = xmlhttp.responseText;
-            while (matches = regex.exec(response)) {
+            song_response = xmlhttp.responseText;
+            while (matches = regex.exec(song_response)) {
                 console.log(matches[1]);
                 song_output.push(matches[1]);
                 
             }
-            //console.log("response: " + response);
+            //console.log("response: " + song_response);
             //console.log(song_output)
             $("#mp3Source").attr('src', song_output[0].trim());
             if(song_output[1]){
