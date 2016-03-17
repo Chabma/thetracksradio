@@ -381,7 +381,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
             }
         }
     };
-    xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+song_num+"",true);
+    xmlhttp.open("GET","./getsong.php?a="+show_num+"&b="+episode_num+"&c="+current_song_num+"",true);
     xmlhttp.send();
 }
 
