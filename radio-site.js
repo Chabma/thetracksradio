@@ -41,12 +41,12 @@ $(document).ready(function()
         //replaceState(null, null, window.location.pathname + "#" + e.target.getAttribute("id"));
         //history.pushState(null, null,window.location.pathname + "#"+ e.target.getAttribute("id"));
                             
-     });
+    });
     
  
     $("#player").bind("ended", function(){
         if(shuffle_bool){
-            play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0); 
+            play_song(current_show_num, current_episode_num, Math.round(Math.random() * (playlist_count - 0) + 0)); 
         }
         else{
             if(backwards_bool){
@@ -79,7 +79,7 @@ $(document).ready(function()
                 audio.currentTime = 0;
             }else{
                 if (shuffle_bool){
-                 play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 1);
+                 play_song(current_show_num, current_episode_num, Math.round(Math.random() * (playlist_count - 0) + 1));
                 }
                 else if (backwards_bool){
                     play_song(current_show_num, current_episode_num, current_song_num + 1);
@@ -94,7 +94,7 @@ $(document).ready(function()
      $( "#next" ).click(function(){
          try{
              if (shuffle_bool){
-                 play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 1);
+                 play_song(current_show_num, current_episode_num, Math.round(Math.random() * (playlist_count - 0) + 1));
              }
              else if (backwards_bool){
                  play_song(current_show_num, current_episode_num, current_song_num - 1);
@@ -121,7 +121,7 @@ $(document).ready(function()
 		$("#shuffle").attr('src', 'images/button-images/shuffle.png');
 	} else { 
 		shuffle_bool = true;
-        first_song = Math.random() * (playlist_count - 0) + 1
+        first_song = Math.round(Math.random() * (playlist_count - 0) + 1);
 		$("#shuffle").attr('src', 'images/button-images/shuffle_on.png');
 	}
     });
@@ -130,7 +130,7 @@ $(document).ready(function()
         if (backwards_bool) {
 		backwards_bool = false;
         if(shuffle_bool){
-            first_song = Math.random() * (playlist_count - 0) + 1
+            first_song = Math.round(Math.random() * (playlist_count - 0) + 1);
         }
         else{
             first_song = 1; 
@@ -294,7 +294,7 @@ function get_background(number) {
                 bg_output.push(bg_matches[1]);
             }
             //console.log("response: " + response);
-            //console.log(bg_output)
+            //console.log(bg_output);
             document.body.style.backgroundImage = "url('"+bg_output[0].trim()+"')";
         }
     };
@@ -323,7 +323,7 @@ function open_doc(show_num, episode_num, arbitrary_num){
                 doc_output.push(doc_matches[1]);
             }
             //console.log("response: " + response);
-            //console.log(doc_output)
+            //console.log(doc_output);
             $("#episode_content").html("");
             $("#episode_content").load(doc_output[0].trim());
         }
@@ -334,7 +334,7 @@ function open_doc(show_num, episode_num, arbitrary_num){
 
 function play_song(show_num, episode_num, song_num, _callback) {
     var xmlhttp = null;
-    //console.log("play_song called")
+    //console.log("play_song called");
     var source = document.getElementById('mp3Source');
     var song_response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
@@ -409,7 +409,7 @@ function get_count(show_num, episode_num) {
             
             console.log("playlist_count: "+playlist_count);
             if( shuffle_bool){
-               first_song = Math.random() * (playlist_count - 0) + 1; 
+               first_song = Math.round(Math.random() * (playlist_count - 0) + 1); 
             }
             else if(backwards_bool){
                 first_song = playlist_count;
@@ -418,7 +418,7 @@ function get_count(show_num, episode_num) {
                 first_song = 1;
             }
             console.log("first_song: "+first_song);
-            return playlist_count;
+            return first_song;
         }  
     };
     xmlhttp.open("GET","./getcount.php?a="+show_num+"&b="+episode_num+"",true);
