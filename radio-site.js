@@ -46,7 +46,7 @@ $(document).ready(function()
  
     $("#player").bind("ended", function(){
         if(shuffle_bool){
-            play_song(current_show_num, current_episode_num, Math.floor(Math.random() * (playlist_count - 0) + 0)); 
+            play_song(current_show_num, current_episode_num, Math.floor(Math.random() * (playlist_count - 0) + 1)); 
         }
         else{
             if(backwards_bool){
@@ -219,7 +219,7 @@ function seek(loc){
 }
 
 function get_about_content() {
-    console.log('about_content');
+    //console.log('about_content');
     $("#episode").html("");
     $("#episode_content").html("");
     $("#show_description").html("</br><h3>About</h3><p>email: thetracksradio@gmail.com</p></br><h3>New Content</h3><p>Twix God: Every Monday</p><p>Jams: Every Thursday (afternoon)</p></br>");
@@ -356,7 +356,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             song_response = xmlhttp.responseText;
             while (matches = regex.exec(song_response)) {
-                console.log(matches[1]);
+                //console.log(matches[1]);
                 song_output.push(matches[1]);
                 
             }
@@ -410,7 +410,7 @@ function get_count(show_num, episode_num) {
                 playlist_count = parseInt(output[0].trim());
             }
             
-            console.log("playlist_count: "+playlist_count);
+            //console.log("playlist_count: "+playlist_count);
             if( shuffle_bool){
                first_song = Math.floor(Math.random() * (playlist_count - 0) + 1); 
             }
