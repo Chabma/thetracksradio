@@ -13,8 +13,8 @@
         $sql="SELECT * FROM Episodes WHERE Show_Id = '".$q."' ORDER BY Release_Date DESC";
         $result = mysqli_query($con,$sql); 
         while($row = mysqli_fetch_array($result)) {
-            echo('<li onclick= "');
-            echo('get_count(');
+            echo('<li onclick= "function(e) {');
+            echo(' num = get_count(');
             echo($row['Show_Id']);
             echo(',');
             echo($row['Episode_Id']);
@@ -24,12 +24,8 @@
             echo(',');
             echo($row['Episode_Id']);
             echo(',');
-            echo('get_count(');
-            echo($row['Show_Id']);
-            echo(',');
-            echo($row['Episode_Id']);
-            echo(') ');
-            echo(')">');
+            echo('num)}');
+            echo('">');
             echo('<img src="');
             echo($row['IMG_Location']);
             echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h4>');
