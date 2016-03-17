@@ -333,6 +333,9 @@ function open_doc(show_num, episode_num, arbitrary_num){
 }
 
 function play_song(show_num, episode_num, song_num, _callback) {
+    if (song_num == -1){
+        song_num = get_count(show_num, episode_num);
+    }
     var xmlhttp = null;
     //console.log("play_song called");
     var source = document.getElementById('mp3Source');
