@@ -46,7 +46,7 @@ $(document).ready(function()
  
     $("#player").bind("ended", function(){
         if(shuffle_bool){
-            play_song(current_show_num, current_episode_num, Math.round(Math.random() * (playlist_count - 0) + 0)); 
+            play_song(current_show_num, current_episode_num, Math.floor(Math.random() * (playlist_count - 0) + 0)); 
         }
         else{
             if(backwards_bool){
@@ -79,7 +79,7 @@ $(document).ready(function()
                 audio.currentTime = 0;
             }else{
                 if (shuffle_bool){
-                 play_song(current_show_num, current_episode_num, Math.round(Math.random() * (playlist_count - 0) + 1));
+                 play_song(current_show_num, current_episode_num, Math.floor(Math.random() * (playlist_count - 0) + 1));
                 }
                 else if (backwards_bool){
                     play_song(current_show_num, current_episode_num, current_song_num + 1);
@@ -94,7 +94,7 @@ $(document).ready(function()
      $( "#next" ).click(function(){
          try{
              if (shuffle_bool){
-                 play_song(current_show_num, current_episode_num, Math.round(Math.random() * (playlist_count - 0) + 1));
+                 play_song(current_show_num, current_episode_num, Math.floor(Math.random() * (playlist_count - 0) + 1));
              }
              else if (backwards_bool){
                  play_song(current_show_num, current_episode_num, current_song_num - 1);
@@ -121,7 +121,7 @@ $(document).ready(function()
 		$("#shuffle").attr('src', 'images/button-images/shuffle.png');
 	} else { 
 		shuffle_bool = true;
-        first_song = Math.round(Math.random() * (playlist_count - 0) + 1);
+        first_song = Math.floor(Math.random() * (playlist_count - 0) + 1);
 		$("#shuffle").attr('src', 'images/button-images/shuffle_on.png');
 	}
     });
@@ -130,7 +130,7 @@ $(document).ready(function()
         if (backwards_bool) {
 		backwards_bool = false;
         if(shuffle_bool){
-            first_song = Math.round(Math.random() * (playlist_count - 0) + 1);
+            first_song = Math.floor(Math.random() * (playlist_count - 0) + 1);
         }
         else{
             first_song = 1; 
@@ -412,7 +412,7 @@ function get_count(show_num, episode_num) {
             
             console.log("playlist_count: "+playlist_count);
             if( shuffle_bool){
-               first_song = Math.round(Math.random() * (playlist_count - 0) + 1); 
+               first_song = Math.floor(Math.random() * (playlist_count - 0) + 1); 
             }
             else if(backwards_bool){
                 first_song = playlist_count;
