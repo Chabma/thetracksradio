@@ -222,7 +222,7 @@ function get_about_content() {
     //console.log('about_content');
     $("#episode").html("");
     $("#episode_content").html("");
-    $("#show_description").html("</br><h3>About</h3><p>email: thetracksradio@gmail.com</p></br><h3>New Content</h3><p>Twix God: Every Monday</p><p>Jams: Every Thursday (afternoon)</p></br>");
+    $("#show_description").html("</br><h3>About</h3><p>email: thetracksradio@gmail.com</p></br><h3>New Content Every Two Weeks</h3><p>Twix God: Mondays</p><p>Jams: Thursdays (afternoon)</p></br>");
 }
 
 function get_home_content() {
