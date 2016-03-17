@@ -50,7 +50,7 @@ $(document).ready(function()
         }
         else{
             if(backwards_bool){
-                play_song(current_show_num, current_episode_num, current_song_num-1); 
+                play_song(current_show_num, current_episode_num, current_song_num - 1); 
             }
             else{
                 play_song(current_show_num, current_episode_num, current_song_num+1); 
@@ -79,7 +79,7 @@ $(document).ready(function()
                 audio.currentTime = 0;
             }else{
                 if (shuffle_bool){
-                 play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0);
+                 play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 1);
                 }
                 else if (backwards_bool){
                     play_song(current_show_num, current_episode_num, current_song_num + 1);
@@ -94,7 +94,7 @@ $(document).ready(function()
      $( "#next" ).click(function(){
          try{
              if (shuffle_bool){
-                 play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 0);
+                 play_song(current_show_num, current_episode_num, Math.random() * (playlist_count - 0) + 1);
              }
              else if (backwards_bool){
                  play_song(current_show_num, current_episode_num, current_song_num - 1);
@@ -121,7 +121,7 @@ $(document).ready(function()
 		$("#shuffle").attr('src', 'images/button-images/shuffle.png');
 	} else { 
 		shuffle_bool = true;
-        first_song = Math.random() * (playlist_count - 0) + 0
+        first_song = Math.random() * (playlist_count - 0) + 1
 		$("#shuffle").attr('src', 'images/button-images/shuffle_on.png');
 	}
     });
@@ -338,7 +338,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
     var source = document.getElementById('mp3Source');
     var response = null;
     var regex = /<div class="results">([\s\S]*?)<\/div>/g;
-    var matches, output = [];
+    var matches, song_output = [];
     current_show_num = show_num;
     current_episode_num = episode_num;
     current_song_num = song_num;
@@ -354,19 +354,19 @@ function play_song(show_num, episode_num, song_num, _callback) {
             response = xmlhttp.responseText;
             while (matches = regex.exec(response)) {
                 //console.log(matches[1]);
-                output.push(matches[1]);
+                song_output.push(matches[1]);
             }
             //console.log("response: " + response);
-            //console.log(output)
-            $("#mp3Source").attr('src', output[0].trim());
-            if(output[1]){
-                $("#songTitle").text(output[1].trim());
+            //console.log(song_output)
+            $("#mp3Source").attr('src', song_output[0].trim());
+            if(song_output[1]){
+                $("#songTitle").text(song_output[1].trim());
             }
-            if(output[2]){
-                $("#album-image").attr('src', output[2].trim());
+            if(song_output[2]){
+                $("#album-image").attr('src', song_output[2].trim());
             }
-            if(output[3]){
-                $("#songTitle").append(output[3]);
+            if(song_output[3]){
+                $("#songTitle").append(song_output[3]);
             }
             audio.load(); //call this to just preload the audio without playing
             audio.play(); //call this to play the song
