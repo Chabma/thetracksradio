@@ -13,18 +13,17 @@
         $sql="SELECT * FROM Episodes WHERE Show_Id = '".$q."' ORDER BY Release_Date DESC";
         $result = mysqli_query($con,$sql); 
         while($row = mysqli_fetch_array($result)) {
-            echo('<li onclick= "function(e) {');
-            echo(' num = get_count(');
-            echo($row['Show_Id']);
-            echo(',');
-            echo($row['Episode_Id']);
-            echo('); ');
+            echo('<li onclick= "');
             echo($row['Function']);
             echo($row['Show_Id']);
             echo(',');
             echo($row['Episode_Id']);
             echo(',');
-            echo('num)}');
+            echo('get_count(');
+            echo($row['Show_Id']);
+            echo(',');
+            echo($row['Episode_Id']);
+            echo('))');
             echo('">');
             echo('<img src="');
             echo($row['IMG_Location']);
