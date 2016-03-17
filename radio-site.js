@@ -417,6 +417,7 @@ function get_count(show_num, episode_num) {
             else{
                 first_song = 1;
             }
+            console.log("first_song: "+first_song);
             return playlist_count;
         }  
     };
