@@ -333,7 +333,7 @@ function open_doc(show_num, episode_num, arbitrary_num){
 }
 
 function play_song(show_num, episode_num, song_num, _callback) {
-    
+    get_count(show_num, episode_num);
     var xmlhttp = null;
     //console.log("play_song called");
     var source = document.getElementById('mp3Source');
@@ -344,7 +344,7 @@ function play_song(show_num, episode_num, song_num, _callback) {
     current_episode_num = episode_num;
     current_song_num = song_num;
     if (song_num == -1){
-        current_song_num = get_count(show_num, episode_num);
+        current_song_num = first_song;
     }
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -422,7 +422,6 @@ function get_count(show_num, episode_num) {
                 first_song = 1;
             }
             console.log("first_song: "+first_song);
-            return first_song;
         }  
     };
     xmlhttp.open("GET","./getcount.php?a="+show_num+"&b="+episode_num+"",true);
