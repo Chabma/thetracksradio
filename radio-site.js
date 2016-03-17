@@ -416,6 +416,7 @@ function get_count(show_num, episode_num) {
             else{
                 first_song = 1;
             }
+            return playlist_count;
         }  
     };
     xmlhttp.open("GET","./getcount.php?a="+show_num+"&b="+episode_num+"",true);
