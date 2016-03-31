@@ -31,10 +31,10 @@ $(document).ready(function()
             get_content(str);
          }
          if($(this).index() == 1){
-             $("#show_description").html("<p>New Content Every Monday</p>");
+             $("#show_description").html("<p>New Content Every Second Monday</p>");
          }
          if($(this).index() == 2){
-             $("#show_description").html("<p>New Content Every Thursday</p>");
+             $("#show_description").html("<p>New Content Every Second Thursday</p>");
          }
          
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
