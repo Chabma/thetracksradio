@@ -24,9 +24,8 @@
             echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h4>');
             echo($row['Title']);
             echo('</h4></br><p>');
-            echo($row['Description']);
             if( $row['Function'] == 'get_count(' ) {
-                echo('</br>Duration: ');
+                echo('Duration: ');
                 echo(floor($row['Duration']/3600));
                 echo(':');
                 echo(sprintf("%02d", floor(($row['Duration']%3600)/60)));
