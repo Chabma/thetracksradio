@@ -249,7 +249,7 @@ progress{
     padding: 25px 25px 0px 25px;
     vertical-align: top;
     height: 250px;
-    width: 18%;
+    width: 150;
     display: inline-block;
     border-top: medium solid rgba(0, 20, 260, 0); 
     border-bottom: medium solid rgba(0, 20, 260, 0); 
@@ -280,11 +280,13 @@ progress{
 
 
 .episodes-paragraph {
-    margin: 2 2 2 2;
-    padding: 2 0 2 27%;
+    height: 100px;
+    width: 150px;
+    margin: 150 2 2 2;
+    padding: 2 0 2 0;
+    text-align: center;
     vertical-align: middle;
     display: inline-block;
-    max-height: 100px;
     overflow: auto;
     font-family: "Pacifico","Lobster";
     font-size: 14px;
@@ -295,13 +297,13 @@ progress{
     display: inline-block;
 }
 
-.episodes-paragraph:hover p{
-    color: blue;
-}
-
 .episodes-paragraph h4{
     margin: 0;
     display: inline-block;
+}
+
+.episodes-paragraph:hover h4{
+    color: blue;
 }
 
 #episodes li:hover { 
