@@ -246,7 +246,7 @@ progress{
     margin: auto;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding: 0px 25px 0px 25px;
+    padding: 25px 25px 0px 25px;
     vertical-align: top;
     height: 250px;
     width: 18%;
@@ -257,20 +257,11 @@ progress{
     border-bottom: medium solid rgba(0, 20, 260, 0); 
     
 }
+
 #episodes li img{
     float: left;
     vertical-align: middle;
     margin: 3 0 2 3;
-    display: inline-block;
-    height: 150px;
-    width: 150px;
-    position: absolute;
-}
-
-#episodes li .overlay{
-    float: left;
-    vertical-align: middle;
-    margin: 0 0 2 5%;
     display: inline-block;
     height: 150px;
     width: 150px;
