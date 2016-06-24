@@ -249,7 +249,7 @@ progress{
     padding: 0px 25px 0px 25px;
     vertical-align: top;
     height: 100px;
-    width: 22%;
+    width: 18%;
     display: inline-block;
     border-top: medium solid rgba(0, 20, 260, 0); 
     border-bottom: medium solid rgba(0, 20, 260, 0); 
@@ -262,14 +262,14 @@ progress{
     vertical-align: middle;
     padding: 3 0 2 27%;
     display: inline-block;
-    height: 94px;
-    width: 94px;
+    height: 150px;
+    width: 150px;
     padding-left: 5%;
     position: absolute;
 }
 
 .episodes-paragraph {
-    margin: 2 2 2 2;
+    margin: 160 2 2 2;
     padding: 2 0 2 27%;
     vertical-align: middle;
     display: inline-block;
