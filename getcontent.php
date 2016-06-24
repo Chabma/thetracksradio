@@ -19,7 +19,7 @@
             echo(',');
             echo($row['Episode_Id']);
             echo(')">');
-            echo('<img src="');
+            echo('<img class="episode_image" src="');
             echo($row['IMG_Location']);
             echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h4>');
             echo($row['Title']);
