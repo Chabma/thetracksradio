@@ -249,8 +249,8 @@ progress{
     padding: 0px 25px 0px 25px;
     vertical-align: top;
     height: 100px;
-    width: 90%;
-    display:block;
+    width: 22%;
+    display: inline-block;
     border-top: medium solid rgba(0, 20, 260, 0); 
     border-bottom: medium solid rgba(0, 20, 260, 0); 
     border-top: medium solid rgba(0, 20, 260, 0); 
@@ -290,12 +290,15 @@ progress{
 }
 
 #episodes li:hover { 
-    border-top: medium solid rgba(0, 20, 260, 1); 
+    /* border-top: medium solid rgba(0, 20, 260, 1); 
     border-bottom: medium solid rgba(0, 20, 260, 1);
     border-right: medium solid rgba(0, 20, 260, 1);
     border-left: medium solid rgba(0, 20, 260, 1);
-    border-radius: 3px;
+    border-radius: 3px; */
 }
-#episodes li:hover .overlay{ 
+#episodes li p:hover .overlay{ 
+    color: dodgerblue;
+}
+#episodes li img:hover .overlay{ 
     opacity: .4;
 }

@@ -268,7 +268,7 @@ function get_content(show_num) {
                 //console.log(xmlhttp.response);
             }
         };
-        xmlhttp.open("GET","./getcontent.php?q="+str,true);
+        xmlhttp.open("GET","./getcontent.php?q="+show_num,true);
         xmlhttp.send();
     }
 }
