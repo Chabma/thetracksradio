@@ -103,6 +103,7 @@ progress{
     font-kerning: normal;
     font-family: "Lobster";
     text-align: center;
+    min-width: 636;
 }
 
 #content {
@@ -113,7 +114,8 @@ progress{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10%;
-    max-width: 848;
+    max-width: 1060;
+    display: table;
 }
 
 #buttons{
