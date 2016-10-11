@@ -1,0 +1,324 @@
+html{
+    height: 100%;
+    min-height: 500px;
+    min-width: 900px;    
+}
+
+body {
+    overflow: auto;
+    overflow-x: auto;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    min-width: 900px;  
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+}
+
+img {
+    display: block;
+    max-width:100%;
+    max-height:100%;
+    width: auto;
+    height: auto;
+}
+
+h4 {
+    margin: 0;
+}
+
+progress{
+}
+
+
+#top {
+    /* background-color: rgba(255,255,255,0.6); */
+    width: 100%;
+}
+
+#bottom{
+    height: 11%;
+    position: fixed;
+    bottom: -0%;
+    width: 100%;
+    border-bottom: small solid black;
+    background-color: rgba(255,255,255,0.5);
+    margin: auto;
+}
+
+#logo {
+    text-align: center;
+    padding-top: 15px;
+    vertical-align: middle;
+    min-width: auto;
+    margin: auto;
+    font-size: 3em;
+    color: aquamarine;
+    font-kerning: normal;
+    font-family: 'Cabin Condensed',"Amatic SC","Satisfy","Pacifico","Lobster";
+}
+#logo h1{
+    margin: 0px 0px 0px 0px;
+}
+
+#shows {
+    border-bottom: medium solid black;
+    border-top: medium solid black;
+    border-radius: 3px;
+    background-color: rgba(255,255,255,0.8);
+    padding-top: 10px;
+    margin: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#shows ul{
+    padding: 0;
+    display: table;
+    width: 100%;
+    height: 20px;
+}
+
+#shows li{
+    display: table-cell;
+    width: 10%;
+    margin: auto;
+    height: 20px;
+    width: 16.666666667%;  /* (100 / numItems)% */
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#shows li:hover { 
+    color: #FFA500; 
+}
+
+#show_description {
+    margin-top: 16px;
+    font-size: 13px;
+    font-kerning: normal;
+    font-family: "Lobster";
+    text-align: center;
+    min-width: 636;
+}
+
+#content {
+    -webkit-box-shadow: 0 0 14px 1px rgba(87,87,87,0.2);
+    box-shadow: 0 0 14px 1px rgba(87,87,87,0.2);
+    border-radius: 3px;
+    background-color: rgba(255,255,255,1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    width: 70%;
+    display: table;
+}
+
+#buttons{
+    width: 10%;
+    height: 100%;
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 3%;
+}
+
+#middle-bottom{
+    display: inline-block;
+    width: 47%;
+    margin: auto;
+    vertical-align: middle;
+}
+
+#time {
+    display: inline-block;
+    width: 10%;
+    height: 60%;
+    margin: 0 auto 0 auto;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+#time p{
+    display: inherit;
+    margin: auto;
+    font-size: 20px;
+    font-size: 2vw;
+    font-kerning: normal;
+    font-family: 'Archivo Black',"Satisfy","Pacifico","Lobster";
+}
+
+
+#volume {
+    display: inline-block;
+    width: 9%;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#buttons img{
+    max-width: 27%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#buttons_2 {
+    max-width: 3%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#buttons_2 img{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    height: 40%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#audio_progress{
+    width: 100%;
+    margin: auto;
+    vertical-align: middle;
+}
+
+#title_div{
+    vertical-align: middle;
+}
+
+#middle-bottom-bottom{
+    width: 90%;
+    margin: auto;
+    vertical-align: middle;
+}
+
+#album-image {
+    height: 100%;
+    max-width: 8%;
+    display: inline-block;
+    -webkit-box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
+    box-shadow: 0 0 12px 1px rgba(87,87,87,0.2);
+    margin-right: 2%;
+    vertical-align: middle;
+}
+
+.overlay {
+    opacity: 0;
+}
+
+#songTitle{
+    background-color: white;
+    font-size: 15px;
+    text-align: center;
+    margin: auto;
+}
+
+#volume img{
+
+    display: inline-block;
+    margin: auto;
+    height: 50%;
+    max-width: 25%;
+    vertical-align: middle;
+}
+
+#volume_progress{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 60%;
+}
+#episodes {
+    width: 100%;
+}
+#episodes table{
+    width: 100%; 
+    overflow: hidden;
+    margin-bottom: 0;
+    padding: 0;
+    display: table;
+}
+
+#episodes td{
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 25px 25px 0px 25px;
+    vertical-align: top;
+    height: 250px;
+    width: 162;
+    display: table-cell;
+    border-top: medium solid rgba(0, 20, 260, 0); 
+    border-bottom: medium solid rgba(0, 20, 260, 0); 
+    border-top: medium solid rgba(0, 20, 260, 0); 
+    border-bottom: medium solid rgba(0, 20, 260, 0); 
+    text-align: center;
+}
+
+#episodes td .episode_image{
+    float: left;
+    vertical-align: middle;
+    margin: 6 0 0 6;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+}
+
+#episodes td .overlay{
+    float: left;
+    vertical-align: middle;
+    margin: 3 0 0 3;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+}
+#DJLogin{
+    position: absolute;
+    top:2px;
+    right:30px;
+}
+
+
+.episodes-paragraph {
+    height: 100px;
+    width: 150px;
+    margin: 162 6 2 6;
+    padding: 2 0 2 0;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: auto;
+    font-family: 'Archivo Black',"Pacifico","Lobster";
+    font-size: 14px;
+}
+
+.episodes-paragraph p{
+    margin: 0;
+    display: inline-block;
+}
+
+.episodes-paragraph h4{
+    margin: 0;
+    display: inline-block;
+}
+
+.episodes-paragraph h4:hover {
+    color: blue;
+}
+
+#episodes td .overlay:hover { 
+    opacity: .4;
+    border-top: medium solid rgba(0, 20, 260, 1); 
+    border-bottom: medium solid rgba(0, 20, 260, 1);
+    border-right: medium solid rgba(0, 20, 260, 1);
+    border-left: medium solid rgba(0, 20, 260, 1);
+    border-radius: 3px;
+}
