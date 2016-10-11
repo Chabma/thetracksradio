@@ -13,7 +13,7 @@
         $sql="SELECT * FROM Episodes WHERE Show_Id = '".$q."' ORDER BY Release_Date DESC";
         $result = mysqli_query($con,$sql); 
         while($row = mysqli_fetch_array($result)) {
-            echo('<li onclick= "');
+            echo('<td onclick= "');
             echo($row['Function']);
             echo($row['Show_Id']);
             echo(',');
@@ -32,7 +32,7 @@
                 echo(':');
                 echo(sprintf("%02d", floor($row['Duration']%60)));
             }
-            echo('</p></li>');
+            echo('</p></td>');
         }
         mysqli_close($con);
         ?>

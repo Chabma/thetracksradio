@@ -58,7 +58,7 @@ progress{
     font-size: 3em;
     color: aquamarine;
     font-kerning: normal;
-    font-family: "Amatic SC","Satisfy","Pacifico","Lobster";
+    font-family: 'Libre Franklin',"Amatic SC","Satisfy","Pacifico","Lobster";
 }
 #logo h1{
     margin: 0px 0px 0px 0px;
@@ -151,7 +151,7 @@ progress{
     font-size: 20px;
     font-size: 2vw;
     font-kerning: normal;
-    font-family: "Satisfy","Pacifico","Lobster";
+    font-family: 'Libre Franklin',"Satisfy","Pacifico","Lobster";
 }
 
 
@@ -237,14 +237,15 @@ progress{
 #episodes {
     width: 100%;
 }
-#episodes ul{
+#episodes table{
     width: 100%; 
     overflow: hidden;
     margin-bottom: 0;
     padding: 0;
+    display: table;
 }
 
-#episodes li{
+#episodes td{
     margin: auto;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -252,15 +253,15 @@ progress{
     vertical-align: top;
     height: 250px;
     width: 162;
-    display: inline-block;
+    display: table-cell;
     border-top: medium solid rgba(0, 20, 260, 0); 
     border-bottom: medium solid rgba(0, 20, 260, 0); 
     border-top: medium solid rgba(0, 20, 260, 0); 
     border-bottom: medium solid rgba(0, 20, 260, 0); 
-    
+    text-align: center;
 }
 
-#episodes li .episode_image{
+#episodes td .episode_image{
     float: left;
     vertical-align: middle;
     margin: 6 0 0 6;
@@ -270,7 +271,7 @@ progress{
     position: absolute;
 }
 
-#episodes li .overlay{
+#episodes td .overlay{
     float: left;
     vertical-align: middle;
     margin: 3 0 0 3;
@@ -278,6 +279,11 @@ progress{
     height: 150px;
     width: 150px;
     position: absolute;
+}
+#DJLogin{
+    position: absolute;
+    top:2px;
+    right:30px;
 }
 
 
@@ -290,7 +296,7 @@ progress{
     vertical-align: middle;
     display: inline-block;
     overflow: auto;
-    font-family: "Pacifico","Lobster";
+    font-family: 'Libre Franklin',"Pacifico","Lobster";
     font-size: 14px;
 }
 
@@ -308,14 +314,7 @@ progress{
     color: blue;
 }
 
-#episodes li:hover { 
-    /* border-top: medium solid rgba(0, 20, 260, 1); 
-    border-bottom: medium solid rgba(0, 20, 260, 1);
-    border-right: medium solid rgba(0, 20, 260, 1);
-    border-left: medium solid rgba(0, 20, 260, 1);
-    border-radius: 3px; */
-}
-#episodes li .overlay:hover { 
+#episodes td .overlay:hover { 
     opacity: .4;
     border-top: medium solid rgba(0, 20, 260, 1); 
     border-bottom: medium solid rgba(0, 20, 260, 1);
