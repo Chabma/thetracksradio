@@ -180,15 +180,19 @@ $(document).ready(function()
     //randomnumber = 27;
     if (randomnumber == 2){
         $( "#logo h1" ).css("color","lightcoral");
+        $( "#shows li" ).css("color","lightcoral");
     }
     if (randomnumber == 1 ||randomnumber == 3 ||randomnumber == 22){
         $( "#logo h1" ).css("color","white");
+        $( "#shows li" ).css("color","white");
     }
     if (randomnumber == 5 || randomnumber == 7 || randomnumber == 8 || randomnumber == 9 || randomnumber == 12 || randomnumber == 13 || randomnumber == 14 || randomnumber == 16){
         $( "#logo h1" ).css("color","black");
+        $( "#shows li" ).css("color","black");
     }
     if (randomnumber == 17){
         $( "#logo h1" ).css("color","bisque");
+        $( "#shows li" ).css("color","bisque");
     }
     get_background(randomnumber);
     
