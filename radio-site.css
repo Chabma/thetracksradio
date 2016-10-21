@@ -314,7 +314,7 @@ progress{
     color: blue;
 }
 
-#episodes td .overlay:hover { 
+#episode_content td .overlay:hover { 
     opacity: .4;
     border-top: medium solid rgba(0, 20, 260, 1); 
     border-bottom: medium solid rgba(0, 20, 260, 1);
