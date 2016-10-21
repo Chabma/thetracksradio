@@ -17,7 +17,8 @@
         echo('<tr>');
         while($row = mysqli_fetch_array($result)) {
             $counter = $counter + 1;
-            echo('this is the counter ='+$counter+'');
+            echo('this is the counter =');
+            echo($counter);
             if($counter % 3 == 0){
                 echo('</tr>this is one print'+$counter+'<tr>');
             }
