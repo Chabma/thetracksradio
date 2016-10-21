@@ -16,6 +16,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0 0 0 0;
+    font-family: "Montserrat";
 }
 
 img {
@@ -89,6 +90,7 @@ progress{
     line-height: 20px;
     text-align: center;
     white-space: nowrap;
+    font-size: 30px;
 }
 
 #shows li:hover { 
