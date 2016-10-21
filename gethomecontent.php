@@ -16,8 +16,8 @@
         $counter = 0;
         echo('<tr>');
         while($row = mysqli_fetch_array($result)) {
-            counter++;
-            if(counter%3 == 0){
+            counter = counter + 1;
+            if(counter % 3 == 0){
                 echo('</tr><tr>');
             }
             echo('<td onclick= "');
