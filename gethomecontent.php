@@ -17,8 +17,8 @@
         echo('<tr>');
         while($row = mysqli_fetch_array($result)) {
             $counter = $counter + 1;
-            if(counter % 3 == 0){
-                echo('</tr>'+counter+'<tr>');
+            if($counter % 3 == 0){
+                echo('</tr>'+$counter+'<tr>');
             }
             echo('<td onclick= "');
             echo($row['Function']);
