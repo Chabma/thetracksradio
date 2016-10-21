@@ -90,7 +90,7 @@ progress{
     line-height: 20px;
     text-align: center;
     white-space: nowrap;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #shows li:hover { 
@@ -321,4 +321,17 @@ progress{
     border-right: medium solid rgba(0, 20, 260, 1);
     border-left: medium solid rgba(0, 20, 260, 1);
     border-radius: 3px;
+}
+
+#current_minutes{
+    font-size:20px;
+}
+#current_seconds{
+    font-size:20px;
+}
+#max_minutes{
+    font-size:20px;
+}
+#max_seconds{
+    font-size:20px;
 }
