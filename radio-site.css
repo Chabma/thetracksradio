@@ -52,7 +52,7 @@ progress{
 
 #logo {
     text-align: center;
-    padding-top: 15px;
+    padding-top: 25px;
     vertical-align: middle;
     min-width: auto;
     margin: auto;
@@ -67,7 +67,6 @@ progress{
 }
 
 #shows {
-    padding-top: 10px;
     margin: auto;
     margin-left: 10%;
     margin-right: 10%;
