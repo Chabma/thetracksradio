@@ -43,6 +43,11 @@ $(document).ready(function()
                             
     });
     
+    $("#djlogin").click(function(e){
+        $("#show_description").html("");
+        $("#episode_content").html("<form>Username:<br><input type='text' name='username' value=''><br>Password:<br><input type='text' name='password' value=''><br>Who is Angus\' favorite person?:<br><input type='text' name='secretquestion' value=''><br><br><input type='submit' value='Submit'></form>");
+    })
+    
  
     $("#player").bind("ended", function(){
         if(shuffle_bool){
