@@ -20,7 +20,8 @@
             echo('this is the counter =');
             echo($counter);
             if($counter % 3 == 0){
-                echo('</tr>this is one print'+$counter+'<tr>');
+                echo('</tr>');
+                echo('<tr>');
             }
             echo('<td onclick= "');
             echo($row['Function']);
