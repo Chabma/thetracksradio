@@ -14,15 +14,14 @@
         $sql="SELECT * FROM Episodes ORDER BY Release_Date DESC";
         $result = mysqli_query($con,$sql);
         $counter = 0;
-        echo('<tr>');
         while($row = mysqli_fetch_array($result)) {
-            $counter = $counter + 1;
-            echo('this is the counter =');
-            echo($counter);
-            if($counter % 3 == 0){
-                echo('</tr>');
+            if($counter % 4 == 0){
+                if($counter != 0){
+                    echo('</tr>');
+                }
                 echo('<tr>');
             }
+            $counter = $counter + 1;
             echo('<td onclick= "');
             echo($row['Function']);
             echo($row['Show_Id']);
