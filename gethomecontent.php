@@ -15,7 +15,7 @@
         $result = mysqli_query($con,$sql);
         $counter = 0;
         while($row = mysqli_fetch_array($result)) {
-            if($counter % 4 == 0){
+            if($counter % 5 == 0){
                 if($counter != 0){
                     echo('</tr>');
                 }
