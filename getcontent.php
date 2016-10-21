@@ -12,7 +12,15 @@
         mysqli_select_db($con,"thetracksradio_database");
         $sql="SELECT * FROM Episodes WHERE Show_Id = '".$q."' ORDER BY Release_Date DESC";
         $result = mysqli_query($con,$sql); 
+        $counter = 0;
         while($row = mysqli_fetch_array($result)) {
+            if($counter % 4 == 0){
+                if($counter != 0){
+                    echo('</tr>');
+                }
+                echo('<tr>');
+            }
+            $counter = $counter + 1;
             echo('<td onclick= "');
             echo($row['Function']);
             echo($row['Show_Id']);
@@ -34,6 +42,7 @@
             }
             echo('</p></td>');
         }
+        echo('</tr>');
         mysqli_close($con);
         ?>
     </body>
