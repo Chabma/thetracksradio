@@ -191,7 +191,7 @@ $(document).ready(function()
         $( "#logo h1" ).css("color","white");
         $( "#shows li" ).css("color","white");
     }
-    if (randomnumber == 5 || randomnumber == 7 || randomnumber == 8 || randomnumber == 9 || randomnumber == 12 || randomnumber == 13 || randomnumber == 14 || randomnumber == 16 || randomnumber == 24 || randomnumber == 10 || randomnumber == 2  || randomnumber == 15 || randomnumber == 25){
+    if (randomnumber == 5 || randomnumber == 7 || randomnumber == 8 || randomnumber == 9 || randomnumber == 12 || randomnumber == 13 || randomnumber == 14 || randomnumber == 16 || randomnumber == 24 || randomnumber == 10 || randomnumber == 15 || randomnumber == 25){
         $( "#logo h1" ).css("color","black");
         $( "#shows li" ).css("color","black");
     }
