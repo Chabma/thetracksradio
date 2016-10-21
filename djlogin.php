@@ -1,43 +1,77 @@
-<!DOCTYPE html>
+<?php
+   include("config.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $myusername = mysqli_real_escape_string($db,$_POST['username']);
+      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      
+      $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
+      $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+         session_register("myusername");
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: djwelcome.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
+?>
 <html>
-    <head>
-    </head>
-    <body>
-        <?php
-        $con = mysqli_connect('eastone.c3y2bcgdn85r.us-east-1.rds.amazonaws.com','cam','fogter01','thetracksradio_database');
-        if (!$con) {
-            die('Could not connect: ' . mysqli_error($con));
-        }
-        $show_titles = ["","","Twix God","Jams","SoccerShow","John's Thing","Luke's Comic"];
-        
-        mysqli_select_db($con,"thetracksradio_database");
-        $sql="SELECT * FROM Episodes ORDER BY Release_Date DESC";
-        $result = mysqli_query($con,$sql);  
-        while($row = mysqli_fetch_array($result)) {
-            echo('<td onclick= "');
-            echo($row['Function']);
-            echo($row['Show_Id']);
-            echo(',');
-            echo($row['Episode_Id']);
-            echo(')">');
-            echo('<img class="episode_image" src="');
-            echo($row['IMG_Location']);
-            echo('"><img class="overlay" src="images/button-images/overlay.png"><div class="episodes-paragraph"><h4>From ');
-            echo($show_titles[$row['Show_Id']]);
-            echo(': ');
-            echo($row['Title']);
-            echo('</h4></br><p>');
-            if($row['Function'] == 'get_count('){
-                echo('Duration: ');
-                echo(floor($row['Duration']/3600));
-                echo(':');
-                echo(sprintf("%02d", floor(($row['Duration']%3600)/60)));
-                echo(':');
-                echo(sprintf("%02d", floor($row['Duration']%60)));
-            }   
-            echo('</p></td>');
-        }
-        mysqli_close($con);
-        ?>
-    </body>
+   
+   <head>
+      <title>Login Page</title>
+      
+      <style type = "text/css">
+         body {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:14px;
+         }
+         
+         label {
+            font-weight:bold;
+            width:100px;
+            font-size:14px;
+         }
+         
+         .box {
+            border:#666666 solid 1px;
+         }
+      </style>
+      
+   </head>
+   
+   <body bgcolor = "#FFFFFF">
+	
+      <div align = "center">
+         <div style = "width:300px; border: solid 1px #333333; " align = "left">
+            <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
+				
+            <div style = "margin:30px">
+               
+               <form action = "" method = "post">
+                  <label>UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
+                  <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
+                  <input type = "submit" value = " Submit "/><br />
+               </form>
+               
+               <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+					
+            </div>
+				
+         </div>
+			
+      </div>
+
+   </body>
 </html>

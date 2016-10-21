@@ -45,7 +45,7 @@ $(document).ready(function()
     
     $("#djlogin").click(function(e){
         $("#show_description").html("");
-        $("#episode_content").html("<form>Username:<br><input type='text' name='username' value=''><br>Password:<br><input type='text' name='password' value=''><br>Who is Angus\' favorite person?:<br><input type='text' name='secretquestion' value=''><br><br><input type='submit' value='Submit'></form>");
+        $("#episode_content").html("<form action='djlogin.php'>Username:<br><input type='text' name='username' value=''><br>Password:<br><input type='text' name='password' value=''><br>Who\'s Angus\' favorite person?:<br><input type='text' name='secretquestion' value=''><br><br><input type='submit' value='Submit'></form>");
     })
     
  
@@ -262,7 +262,7 @@ function get_content(show_num) {
         $("#episode_content").html("");
         $("#show_description").html("");
         return;
-    } else { 
+    } else {
         //console.log("show num: " + show_num);
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
