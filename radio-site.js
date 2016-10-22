@@ -45,7 +45,7 @@ $(document).ready(function()
     
     $("#djlogin").click(function(e){
         $("#show_description").html("");
-        $("#episode_content").html("<form action='djlogin.php'>Username:<br><input type='text' name='username' value=''><br>Password:<br><input type='text' name='password' value=''><br>Who\'s Angus\' favorite person?:<br><input type='text' name='secretquestion' value=''><br><br><input type='submit' value='Submit'></form>");
+        $("#episodes").html("<form action='djlogin.php'>Username:<br><input type='text' name='username' value=''><br>Password:<br><input type='text' name='password' value=''><br>Who\'s Angus\' favorite person?:<br><input type='text' name='secretquestion' value=''><br><br><input type='submit' value='Submit'></form>");
     })
     
  
