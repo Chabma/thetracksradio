@@ -22,7 +22,7 @@
             }
             $counter = $counter + 1;
             echo('<td title="');
-            echo($row['Description'])     
+            echo($row['Description']);  
             echo('" onclick= "');
             echo($row['Function']);
             echo($row['Show_Id']);
