@@ -21,7 +21,7 @@
                 echo('<tr>');
             }
             $counter = $counter + 1;
-            echo('<td title="');
+            echo('<td title= "');
             echo($row['Description']);  
             echo('" onclick= "');
             echo($row['Function']);
