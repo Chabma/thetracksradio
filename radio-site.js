@@ -31,10 +31,10 @@ $(document).ready(function()
             get_content(str);
          }
          if($(this).index() == 1){
-             $("#show_description").html("<p>New Content Every Second Monday</p>");
+             $("#show_description").html("");
          }
          if($(this).index() == 2){
-             $("#show_description").html("<p>New Content Every Second Thursday</p>");
+             $("#show_description").html("<p></p>");
          }
          
         //document.body.style.backgroundImage = "url('good-photos/27.jpg')";
@@ -231,7 +231,7 @@ function get_about_content() {
     //console.log('about_content');
     $("#episode").html("");
     $("#episode_content").html("");
-    $("#show_description").html("</br><h3>About</h3><p>email: thetracksradio@gmail.com</p></br><h3>Hi everybody, sorry for the lack of content recently, expect more changes and a lot more content to come out over the next month.(Written Oct 27th 2016)</h3></br>");
+    $("#show_description").html("</br><h3>About</h3><p>email: thetracksradio@gmail.com</p></br><h3>Hi everybody, sorry for the lack of content recently, expect more changes (playlists might be getting shorter on average, around 30 minutes instead of 60) and a lot more content to come out over the next month.(Written Oct 27th 2016)</h3></br>");
 }
 
 function get_home_content() {
