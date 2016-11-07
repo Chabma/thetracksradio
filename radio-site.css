@@ -320,6 +320,11 @@ progress{
     border-radius: 3px;
 }
 
+.divider{
+    width:2px;
+    border-right: solid lightgray;
+}
+
 #current_minutes{
     font-size:20px;
 }

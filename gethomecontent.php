@@ -22,7 +22,7 @@
                 echo('<tr>');
             }
             else{
-               echo('|'); 
+                echo('<div class="divider"></div>');
             }
             $counter = $counter + 1;
             echo('<td title= "');

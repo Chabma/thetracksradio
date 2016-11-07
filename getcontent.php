@@ -20,6 +20,9 @@
                 }
                 echo('<tr>');
             }
+            else{
+                echo('<div class="divider"></div>');
+            }
             $counter = $counter + 1;
             echo('<td title= "');
             echo($row['Description']);  
