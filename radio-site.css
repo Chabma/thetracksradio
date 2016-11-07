@@ -255,8 +255,6 @@ progress{
     display: table-cell;
     border-top: medium solid rgba(0, 20, 260, 0); 
     border-bottom: medium solid rgba(0, 20, 260, 0); 
-    border-left: solid lightgray;
-    border-right:solid lightgray;
     text-align: center;
 }
 

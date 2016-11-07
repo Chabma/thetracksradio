@@ -21,6 +21,9 @@
                 }
                 echo('<tr>');
             }
+            else{
+               echo('|'); 
+            }
             $counter = $counter + 1;
             echo('<td title= "');
             echo($row['Description']);
