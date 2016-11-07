@@ -253,8 +253,8 @@ progress{
     height: 250px;
     width: 162;
     display: table-cell;
-    border-top: medium solid rgba(0, 20, 260, 0); 
-    border-bottom: medium solid rgba(0, 20, 260, 0); 
+    /*border-top: medium solid rgba(0, 20, 260, 0); 
+    border-bottom: medium solid rgba(0, 20, 260, 0);*/
     text-align: center;
 }
 
@@ -318,10 +318,10 @@ progress{
 
 #episode_content td:hover { 
     opacity: .4;
-    border-top: medium solid rgba(0, 20, 260, 1); 
-    border-bottom: medium solid rgba(0, 20, 260, 1);
-    border-right: medium solid rgba(0, 20, 260, 1);
-    border-left: medium solid rgba(0, 20, 260, 1);
+    border-top: 1px solid rgba(0, 20, 260, 1); 
+    border-bottom: 1px solid rgba(0, 20, 260, 1);
+    border-right: 1px solid rgba(0, 20, 260, 1);
+    border-left: 1px solid rgba(0, 20, 260, 1);
     border-radius: 3px;
 }
 
