@@ -312,7 +312,7 @@ progress{
 }
 
 #episode_content, th, td {
-    border: 1px solid lightgray;
+    border: 2px solid lightgray;
     border-collapse: collapse;
 }
 
@@ -322,6 +322,7 @@ progress{
     border-bottom: 2px solid rgba(0, 20, 260, 1);
     border-right: 2px solid rgba(0, 20, 260, 1);
     border-left: 2px solid rgba(0, 20, 260, 1);
+    z-index:10;
     border-radius: 3px;
 }
 
