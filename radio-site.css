@@ -311,8 +311,9 @@ progress{
     color: blue;
 }
 
-#episode_content {
+#episode_content, th, td {
     border: 1px solid lightgray;
+    border-collapse: collapse;
 }
 
 #episode_content td:hover { 
