@@ -311,6 +311,10 @@ progress{
     color: blue;
 }
 
+#episode_content {
+    border: 1px solid lightgray;
+}
+
 #episode_content td:hover { 
     opacity: .4;
     border-top: medium solid rgba(0, 20, 260, 1); 
