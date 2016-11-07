@@ -317,11 +317,10 @@ progress{
 }
 
 #episode_content td:hover { 
-    opacity: .4;
-    border-top: 1px solid rgba(0, 20, 260, 1); 
-    border-bottom: 1px solid rgba(0, 20, 260, 1);
-    border-right: 1px solid rgba(0, 20, 260, 1);
-    border-left: 1px solid rgba(0, 20, 260, 1);
+    border-top: 2px solid rgba(0, 20, 260, 1); 
+    border-bottom: 2px solid rgba(0, 20, 260, 1);
+    border-right: 2px solid rgba(0, 20, 260, 1);
+    border-left: 2px solid rgba(0, 20, 260, 1);
     border-radius: 3px;
     z-index:100;
 }
