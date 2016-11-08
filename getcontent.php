@@ -42,7 +42,10 @@
                 echo(':');
                 echo(sprintf("%02d", floor($row['Duration']%60)));
             }
-            echo('</p></td>');
+            echo('</p>');
+            echo('<form method="get" action=');
+            echo($row['Download']);
+            echo('><button type="submit">Download</button></form></td>');
         }
         echo('</tr>');
         mysqli_close($con);
