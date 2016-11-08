@@ -46,7 +46,7 @@
                 echo(sprintf("%02d", floor($row['Duration']%60)));
             }   
             echo('</p>');
-            echo('<form method="get" action=');
+            echo('<form method="get" target="_blank" action=');
             echo($row['Download']);
             echo('><button type="submit">Download</button></form></td>');
         }
